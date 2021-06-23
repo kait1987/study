@@ -1,32 +1,34 @@
 package domain;
 
+
+
 public class Member {
 	
+	
 	private String id;
-	private String password;
+	private String pasaword;
 	private String name;
 	private String email;
 	
 	public Member() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	
 	public Member(String id, String password, String name, String email) {
-		super();
 		this.id = id;
-		this.password = password;
+		this.pasaword = password;
 		this.name = name;
 		this.email = email;
+		
 	}
-
-	public String getId() {
+	public String getID() {
 		return id;
 	}
-
+	
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -50,5 +52,8 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
+	
 
 }
