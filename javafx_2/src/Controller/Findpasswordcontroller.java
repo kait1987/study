@@ -12,21 +12,21 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class FindidController implements Initializable {
+public class FindpasswordController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
+		// TODO Auto-generated method stub
 	}
-	
+
     @FXML
-    private Button btnfindid;
+    private Button btnfindpassword;
 
     @FXML
     private Button btnlogin;
 
     @FXML
-    private TextField txtname;
+    private TextField txtid;
 
     @FXML
     private TextField txtemail;
@@ -35,24 +35,24 @@ public class FindidController implements Initializable {
     private Label lblerror;
 
     @FXML
-    void findid(ActionEvent event) {
+    void findpassword(ActionEvent event) {
     	
-    	String name = txtname.getText();
+    	String id = txtid.getText();
     	String email = txtemail.getText();
     	
     	for( Member temp : Start.memberlist ) {
-    		if( temp.getName().equals(name) && temp.getEmail().equals(email) ) {
-    			lblerror.setText("찾으신 아이디를 이메일로 전송했습니다");
-    			String id = temp.getId();
+    		if( temp.getId().equals(id) && temp.getEmail().equals(email) ) {
+    			lblerror.setText("찾으신 비밀번호를 이메일로 전송했습니다");
+    			String password = temp.getPassword();
     			
     			// 메일전송 메소드 호출 [ 받는사람이메일 , 타입 , 내용에 들어갈변수 ] 
-    			temp.emailsend(email, 2, id);
+    			temp.emailsend(email, 3, password);
     			return;
     		}
     	}
     	
-    	lblerror.setText("동일한 정보의 회원 아이디가 없습니다");
- 
+    	lblerror.setText("동일한 정보의 회원 정보가 없습니다");
+
     }
 
     @FXML
@@ -61,24 +61,5 @@ public class FindidController implements Initializable {
     }
 	
 	
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 }

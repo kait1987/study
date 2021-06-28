@@ -23,14 +23,14 @@ public class Start extends Application {
 		
 		// FXML 첫 실행시 파일 가져오기 
 		memberlist = FileUtil.readfile(
-				new file ("" , ""));
+				new file ("C:/Users/me/git/study/javafx_2/src/File" ,"memberlist.txt" ) );
 		
 		Parent parent = FXMLLoader.load(getClass().getResource("/FXML/login.fxml"));
 		
 		Scene scene = new Scene(parent);
 		stage.setScene(scene);
 		stage.setResizable(false); // stage 크기
-		stage.setTitle("apple"); // stage 상단 이름
+		stage.setTitle("Nike"); // stage 상단 이름
 			// stage.getIcons().add(new Image("/FXML/icon.png"));
 		stage.show();
 		
