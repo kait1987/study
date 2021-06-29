@@ -61,7 +61,7 @@ public class BoardDao {
 		} catch (Exception e) {} 
 		return 0;
 	}
-	
+	//모든 게시물 출력 메소드
 	
 	
 	

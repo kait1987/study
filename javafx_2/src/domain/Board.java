@@ -22,16 +22,13 @@ public class Board {
 		this.bcount = bcount;
 		
 	}
-	// 게시물 번호 [bno]를 제외한 생성 [db삽입용]
+	// 생성자 3 : 게시물 번호 [bno]를 제외한 생성 [db 삽입용]
 	public Board(String btitle, String bcontents, String bwriter, String bdate, int bcount) {
 		this.btitle = btitle;
 		this.bcontents = bcontents;
 		this.bwriter = bwriter;
 		this.bdate = bdate;
 		this.bcount = bcount;
-			
-		
-		
 	}
 
 	// get , set : 필드에 저장/호출 역할
