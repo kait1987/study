@@ -1,0 +1,53 @@
+데이터 영구저장 
+	1. 파일 
+	2. 데이터베이스 [ DB ] 
+
+1. 데이터 정리 / 관리 ==> DB
+2. 용어
+	DB : 데이터베이스 => 표 관리
+	DBMS : 데이터베이스 관리 응용프로그램 [ MYSQL 등 ]
+	DBA : 데이터베이스 관리자 
+		SQL : 질의어 [ DB 언어 ]
+	Table => 표
+		column : 필드[열/세로단위]
+		pk : 기본키 [ 식별가능한 필드 : 회원번호,주민등록번호,사번,학번 등 ] : 중복값 없음 
+		AI : 자동번호 부여 
+
+	SQL 
+		DDL
+		
+		DML
+			1. 추가		insert
+				// 테이블에 데이터 추가 
+				// 1. 모든 필드에 값 넣을경우 => 필드명 생략 
+					// insert into 테이블명 values( 값1, 값2, 값3, 값4 ) 
+				// 2. 특정 필드에만 값을 넣을경우 => 필드명 입력
+					// insert into 테이블명(필드명1,필드명2,필드명3,필드명4) values( 값1, 값2, 값3, 값4 ) 
+
+			2. 삭제		delete
+				// 삭제
+				// delete from 테이블명 where 조건
+			3. 업데이트	update 
+			4. 검색 		select
+				// 검색 
+				// selete 검색필드[*:모든필드] from 테이블명 where 조건
+				
+				
+				
+		DCL
+
+3. MYSQL설치 
+	링크 : https://dev.mysql.com/downloads/
+		// 1. MySQL Installer for Windows
+			// 400M 짜리 다운로드 
+			1. Mysql server
+			2. workbench
+			3. Connector J
+			* port : 3306 / 3307   => DB 들어가는 접속번호 
+
+		// 2. Connector/J 
+			Select Operating System: => Platform Independent
+			// 4M 짜리 다운로드
+			
+	
+  
