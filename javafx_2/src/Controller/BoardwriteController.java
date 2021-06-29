@@ -27,20 +27,17 @@ public class BoardwriteController implements Initializable{
 		
 	}
 	
-	    @FXML
+		@FXML
 	    private Button btnwirte;
 
 	    @FXML
 	    private Button btncancel;
 
 	    @FXML
-	    private TextField btnwrite;
+	    private TextField txttitle;
 
 	    @FXML
-	    private Text txtcontents;
-
-	    @FXML
-	    private Text txttitle;
+	    private TextArea txtcontents; 
 
 	    @FXML
 	    void cancel(ActionEvent event) {
