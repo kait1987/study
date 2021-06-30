@@ -79,16 +79,16 @@ public class BoardController implements Initializable {
 		tableview.setOnMouseClicked( (MouseEvent event ) -> {
 			
 			if( event.getButton().equals(MouseButton.PRIMARY) ) {
-				
-				
-				
+							
 			board = tableview.getSelectionModel().getSelectedItem();
+			board.setBcount (board.getBcount()+1);
+			// 조회수 증가
+			boardDao.addcount(board);
 			//화면 전환
 			MainController.getinstance().loadpage("boardview");
-			// 조회수 증가
 			
 			}
-			
+		
 				
 		} );
 		

@@ -95,8 +95,39 @@ public class BoardDao {
 			return null;
 		}
 	
+		// 조회수 증가
+		public void addcount (Board board ) {
+			
+			String SQL = "update board set bcount = ? where bno =? ";
+			try {
+				PreparedStatement statement = conn.prepareStatement(SQL);
+				statement.setInt(1, board.getBcount() );
+				statement.setInt(2, board.getBno() );
+						
+				statement.executeUpdate();
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+		}
 	
-	
+	// 게시물 삭제 메소드
+	public int delboard( Board board ) {
+		
+		String SQL ="delete from board where bno = ?";
+		//delete from 테이블 명 where 조건
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setInt(1, board.getBno() );
+			statement.executeUpdate() ;
+			return 1; // 성공
+		} 
+		catch (Exception e) {
+			// TODO: handle exception
+		} 
+		return 0; // 실패
+	}
 	
 	
 	
