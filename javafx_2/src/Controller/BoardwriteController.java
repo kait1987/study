@@ -12,8 +12,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Alert.AlertType;
 
 
@@ -56,11 +59,13 @@ public class BoardwriteController implements Initializable{
 	    	
 	    	Board board = new Board(btitle, bcontents, bwriter, bdate, 0);
 	    	
+	    	// Dao 객체 생성
 	    	BoardDao boardDao = BoardDao.getBoardDao();
-	    	
+	    	// Dao 메소드 실행
 	    	int result = boardDao.boardwrite(board);
 	    	
-	    	if (result == 1) {
+	    	if (result == 1) { // 성공
+	    		// 쓰기 버튼을 눌렀을 때 => 화면 전환
 	    		MainController.getinstance().loadpage("board");
 	    		
 	    	}
@@ -75,7 +80,12 @@ public class BoardwriteController implements Initializable{
 	    	
 	    	
 	    	
-
+	    	
+	    	
 	    }
 
+	    
+
 }
+
+
