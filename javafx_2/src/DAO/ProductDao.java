@@ -2,6 +2,9 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import domain.Product;
 
 public class ProductDao {
 	
@@ -12,10 +15,7 @@ public class ProductDao {
 		return productDao;
 	}
 	
-	 public ProductDao()  {
-		// TODO Auto-generated constructor stub
-	
-		 // 생성자 : 객체의 초기값 
+	 public ProductDao()  {	 // 생성자 : 객체의 초기값 
 		// db 연동 
 		try {
 			
@@ -31,5 +31,59 @@ public class ProductDao {
 			e.printStackTrace();
 		}	
 	}
+	 
+	 // 제품 등록 메소드
+	 
+	 public int addproduct( Product product) {
+		 
+		 try {
+			 
+			 String SQL = "insert into product(pname,pcontents,pprice,pstock,pcategory,pactivation,pquantity,pimage)"+"values(?,?,?,?,?,?,?,?)";
+			 
+			 PreparedStatement statement = conn.prepareStatement(SQL);
+			 statement.setString(1, product.getPname() );
+			 statement.setString(2, product.getPcontents() );
+			 statement.setInt(3, product.getPprice() );
+			 statement.setInt(4, product.getPstock() );
+			 statement.setString(5, product.getPcategory() );
+			 statement.setInt(6, product.getPactivation() );
+			 statement.setInt(7, product.getPquantity() );
+			 statement.setString(8, product.getPimage() );
+			 statement.executeUpdate();
+			 
+			 return 1;
+					 
+			 
+			 
+			 
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		 return 0;
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 
 }
