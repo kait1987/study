@@ -129,8 +129,37 @@ public class BoardDao {
 		return 0; // 실패
 	}
 	
-	
-	
+	//게시물 수정 메소드
+	public int updateboard (Board board, String title, String contents) { 
+							// 인수 : 기존게시물 , 새로 입력된 타이틀과 내용
+		// 1. SQL 작성
+		String SQL = "update board set btitle = ? , bcontents =? where bno =? ";
+		
+		// 2. SQL 조작
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			
+			statement.setString(1, title);
+			statement.setString(2, contents);
+			statement.setInt(3, board.getBno() );
+		 
+		// 3. SQL 결과
+			statement.executeUpdate();
+		
+		// 4. SQL 성공
+		return 1;
+		
+		}catch (Exception e) {
+			// TODO: handle exception
+		} return 0;
+		
+		
+		
+		
+		
+		
+		
+	}
 	
 	
 	

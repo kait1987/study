@@ -22,10 +22,11 @@ public class BoardviewController implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
 		
+		// board 에서 클릭 된 게시물 가져오기
 		board = BoardController.getinstance().getboard();
 		
+		// 각 컨트롤에 게시물출력
 		txttitle.setText(board.getBtitle() );
 		txtcontents.setText(board.getBcontents() );
 		lblcount.setText("조회수 : " + board.getBcount() );
@@ -95,6 +96,8 @@ public class BoardviewController implements Initializable{
 	    
 	    @FXML
 	    void update(ActionEvent event) {
+	    	
+	    	MainController.getinstance().loadpage("BoardUpdate");
 
 	    }
 	
