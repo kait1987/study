@@ -3,8 +3,11 @@ package DAO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import domain.Product;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class ProductDao {
 	
@@ -63,7 +66,39 @@ public class ProductDao {
 		 return 0;
 	 }
 	 
-	 
+	 public ObservableList<Product> allProduct() {
+		 
+		 // db에서 찾은 모든 제품을 저장할 리스트
+		 ObservableList<Product> products = FXCollections.observableArrayList();
+		 
+		 // 1.sql 작성
+		 String SQL = "select * from product";
+		 // 2. SQL 조작
+		 try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			//3.sql 실행
+			ResultSet resultSet = statement.executeQuery(); // select 검색 => 쿼리 실행
+			// 4. sql 결과
+				// 결과 하나씩 제품의 객체 생성해서 => 리스트에 객체 하나씩 담기
+			while ( resultSet.next() ) {
+				// 경과의 객체 생성
+				Product product = new Product(
+						resultSet.getInt(1),
+						resultSet.getString(2),
+						resultSet.getString(3),
+						resultSet.getInt(4),
+						resultSet.getInt(5),
+						resultSet.getString(6),
+						resultSet.getInt(7),
+						resultSet.getInt(8),
+						resultSet.getString(9) );
+				// 리스트에 저장
+				products.add(product);
+			}
+			return products; // 성공시 리스트 반환
+		} catch (Exception e) {	}
+		 return null; // 실패시 null
+	 }
 	 
 	 
 	 

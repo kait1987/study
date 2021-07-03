@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -28,11 +29,16 @@
       <Button fx:id="btnpadd" layoutX="451.0" layoutY="332.0" mnemonicParsing="false" onAction="#padd" prefHeight="37.0" prefWidth="113.0" text="등록" />
       <RadioButton fx:id="opt_1" layoutX="127.0" layoutY="293.0" mnemonicParsing="false" text="의류상품">
          <toggleGroup>
-            <ToggleGroup fx:id="그룹" />
+            <ToggleGroup fx:id="category" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="opt_2" layoutX="210.0" layoutY="293.0" mnemonicParsing="false" text="신발" toggleGroup="$그룹" />
-      <RadioButton fx:id="opt_3" layoutX="276.0" layoutY="294.0" mnemonicParsing="false" text="악세사리" toggleGroup="$그룹" />
-      <RadioButton fx:id="opt_4" layoutX="369.0" layoutY="294.0" mnemonicParsing="false" text="기타" toggleGroup="$그룹" />
+      <RadioButton fx:id="opt_2" layoutX="210.0" layoutY="293.0" mnemonicParsing="false" text="신발" toggleGroup="$category" />
+      <RadioButton fx:id="opt_3" layoutX="276.0" layoutY="294.0" mnemonicParsing="false" text="악세사리" toggleGroup="$category" />
+      <RadioButton fx:id="opt_4" layoutX="369.0" layoutY="294.0" mnemonicParsing="false" text="기타" toggleGroup="$category" />
+      <ImageView fx:id="img" fitHeight="95.0" fitWidth="113.0" layoutX="451.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="58.0" layoutY="332.0" text="대표이미지" />
+      <Button fx:id="btnupload" layoutX="135.0" layoutY="328.0" mnemonicParsing="false" onAction="#load" text="업로드" />
+      <Label fx:id="txtpath" layoutX="203.0" layoutY="332.0" text="파일경로" />
+      <ImageView fx:id="imgp" fitHeight="120.0" fitWidth="157.0" layoutX="417.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
