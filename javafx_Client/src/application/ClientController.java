@@ -1,5 +1,6 @@
 package application;
 
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.URL;
@@ -60,6 +61,26 @@ public class ClientController implements Initializable{
 		}
 	
 	// 메세지 받는 메소드
+	private void receive() {
+		while(true) {
+			try {
+				InputStream inputStream = socket.getInputStream();
+				byte[] buffer = new byte[1000]; // 배열 선언
+				inputStream.read(buffer); // 입력스트림으로 부터읽어온 바이트 배열에 저장
+				String msg = new String(buffer); // 바이트 => 문자열
+				//Platform.runLater( (인수) -> {실행코드 } );
+				Platform.runLater( () -> {
+					
+					txtclient.appendText(msg);
+						//txtclient.appendText(msg); 텍스트창에 내용 추가
+				});
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
 	
 	
 	
