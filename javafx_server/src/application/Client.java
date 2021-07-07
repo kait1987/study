@@ -46,8 +46,7 @@ public class Client {
 					}
 					
 				} catch (Exception e) {
-					System.out.println("[¿À·ù] : " + e);
-					ServerController.clients.remove( );
+
 				}
 				
 				
