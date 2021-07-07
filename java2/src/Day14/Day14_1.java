@@ -25,22 +25,22 @@ public class Day14_1 {
 			InetAddress address = InetAddress.getLocalHost();
 											// Local : 로컬 [ 현pc]
 			System.out.println("현재 pc의 이름 : " + address.getHostName());
-			System.out.println("현재 pc의 ip주소 :" address.getHostAddress());
+			System.out.println("현재 pc의 ip주소 :"+ address.getHostAddress());
 			
 			// 네이버 회사의 ip 주소 보기
 			InetAddress address2 = InetAddress.getByName("www.naver.com");
 			System.out.println("네이버 서버 pc의 이름 :" + address2.getHostName() );
-			System.out.println("현재 pc의 ip주소 :" address2.getHostAddress());
+			System.out.println("현재 pc의 ip주소 :"+ address2.getHostAddress());
 			
 			// ip주사가 여러개 일 경우
 			InetAddress[] addresses = InetAddress.getAllByName("www.naver.com");
-			for (InetAddress address3 : address ) {
+			for (InetAddress address3 : addresses ) {
 				System.err.println("네이버 서버 pc 의 이름" + address3.getHostName() );
 				System.out.println("네이버 서버 pc 의 ip 주소" + address3.getHostAddress() );
 				}
 			
 			//구글 회사의 ip주소 보기
-			InetAddress address4 = InetAddress.getByName("www.google.com")
+			InetAddress address4 = InetAddress.getByName("www.google.com");
 			System.err.println("구글 서버pc의 이름 : " + address4.getHostName() );
 			System.out.println("구글 서버pc의 ip주소" + address4.getHostAddress() );	
 			

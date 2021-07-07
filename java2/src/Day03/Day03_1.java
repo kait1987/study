@@ -52,7 +52,7 @@ public class Day03_1 {
 	// 학생 목록 // ?: 와일드카드
 	public static void 명단출력 (명단 <?> course) {
 		System.out.println(course.get명단명() + "명단 인원 :" 
-				+ Array.toString( course.get고객목록() )); 
+				+ Arrays.toString( course.get고객목록() )); 
 		
 	}
 
