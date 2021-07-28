@@ -1,0 +1,31 @@
+jsp : html 내 태그 이용한 java 작성
+	1. 태그
+		1. <%! 선언문 %> : 전역변수 , 메소드 
+		2. <%  스크립트문 %> : java 실행코드 
+		3. <%= 표현식 %> : 출력 
+		4. <%@ 지시자 %> : 페이지 속성
+	
+	2. 내장객체 
+		1. 요청객체 : request 객체 [ 매개변수 요청 ] 
+			1. request.setCharacterEncoding("UTF-8") 혹은 "EUC-KR"
+			2. request.getParameter("매개변수이름")
+			3. request.getParameterNames() : 모든 매개변수 이름 요청 
+			4. request.getParameterValues("매개변수이름") : 매개변수의 모든 값 요청
+		2. 응답객체 : response 객체 
+			1. response.sendRedirect("파일명") :  해당 파일로 이동 
+			
+	3. 쿠키 / 세션 : 메모리의 저장위치가 페이지가 아니기때문에 페이지간 메모리 이동 원활
+		1. 쿠키 : 클라이언트[사용자 pc ] 데이터 저장 
+			* 개인정보가 없는 데이터
+				
+		2. 세션 : 서버[ 개발자 pc ] 데이터 저장 
+			* 개인정보가 있는 데이터
+				1. 세션설정 : session.setAttribute("세션이름" , 데이터 ) 
+				2. 세션호출 : session.getAttribute("세션이름") 
+				
+				
+				
+				
+				
+				
+			

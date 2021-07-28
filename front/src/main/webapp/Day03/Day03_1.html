@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+		<style type="text/css">
+		
+			@font-face {
+    			font-family: 'ONE-Mobile-POP';
+    			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    			font-weight: normal;
+    			font-style: normal;
+			}
+
+			h2{
+				font-family: "궁서"; /*현재 pc에 설치된 글꼴*/
+				color: blue;
+				text-decoration: overline line-through underline; /*밑줄*/
+				text-align: center; /*정렬*/
+				text-shadow: -10px 3px 5px yellow ; /*그림자*/
+			}
+			p{
+				font-family: 'ONE-Mobile-POP'; /*웹폰트*/
+				color: green; /*글꼴색*/
+				background-color: orange; /*배경색*/
+				font-size: 20px; /*글자 크기*/
+				font-style: italic; /*기울기*/
+				font-weight: bold; /*글자 굵게*/
+				
+				line-height: 200%; /*줄간격*/
+				letter-spacing: 10px; /*글자간격 :자간*/
+				word-spacing: 10px; /*단어간격 : 어간*/	
+			}
+			span {
+				font-size: 50px;
+				}
+			a:link { /* 링크 설정 */				
+				color: green;
+				text-decoration: none; /*밑줄제거*/
+				}
+				a:hover { /*마우스를 올렸을때*/
+				color: gray;
+				text-decoration: none;
+				}
+				a:visited { /* 링크를 1번이라도 클릭했을경우 */
+				color: blue;
+				text-decoration: none;
+				}
+				a:active { /* 클릭했을때 */
+				color: black;
+				text-decoration: none;
+				}
+				
+
+		</style>		
+
+
+</head>
+<body>
+	<!-- 						
+	HTML : 문서 	<br> 
+	CSS : 스타일 시트 <br>
+	<p> head 태그 안에서 style 선언 
+	<p> 선택자 : 꾸미기 대상 
+	<p>	1. 태그명{  속성 = "속성값";  }
+	<p> 2. .클래스명{ 속성 = "속성값";  }
+	<p> 3. #id명{ 속성 = "속성값";  } 
+		<p> 우선순위 : id > 클래스 > 태그
+		
+	<p> 글꼴 관련 속성 
+		1. font-family =" 글꼴명 "
+		2. color : 글꼴색 
+			// 1. 색이름 , 헥스값 , RGB 
+					[https://htmlcolorcodes.com/color-picker/]
+			background-color : 배경색
+			
+		3. text-decoration : 밑줄 
+		4. text-align : 텍스트 정렬
+		5. text-shadow: x축 , y축 , 흐름정도 , 색상 
+		6. 
+			font-size:  /*글자 크기*/
+			font-style:  /*기울기*/
+			font-weight: 	/*글자 굵게*/
+			
+			line-height:  /*줄간격*/
+			letter-spacing: 	/*글자간격 :자간*/
+			word-spacing: 	/*단어간격 : 어간*
+			
+			-->
+			
+	
+	<h2> 호랑이 </h2>
+	<p>호랑이(虎狼이) 또는 칡범, 갈범(이는 표범과 구별하여 일컫는 말이다. )은 고양이과에 속하는 맹수다. 어린 개체는 개호주라 부른다.
+	[2] 고양이과 동물중 그 크기가 가장 크며, 스라소니나 표범과 재규어를 제외하면 유일하게 수영을 할 수 있다.
+	(단, 재규어같은 경우에는 단지 사냥을 목적으로 수영을 할뿐 호랑이처럼 주기적으로 물에 들어가지는 않는다). 
+	<span>호랑이</span>의 크기는 아종에 따라 다양한데, 벵골호랑이는 약 100kg 미만이며, 시베리아호랑이는 수컷의경우 최대 360kg에 이르기도 한다. 
+	대개 황갈색 바탕에 검은색 줄무늬가 있다. <div>드물게 흰색을 띤 백호가 있는데,</div> 이는 백색증과 무관한 열성유전자가 발현되어 나타나는 것이다. 
+	뼈를 비롯한 신체의 거의 대부분의 부위가 한약으로 쓰이고 있으며, 그로 인해 심각한 생존의 위협을 받고있다.
+	
+	묶음 태그 
+	<span>앞 태그 이어쓰기 inline</span><br>
+	<div>앞 태그와 줄바꿈 block </div><br>
+	<strong> 중요한 문장 </strong><br>
+	 <b>  볼드 </b><br>
+	 <i>  글자 기울기</i><br> 
+	
+	하이퍼링크  <br>
+	<a href="https://www.naver.com/"> 네이버 바로가기 </a>	<br>
+	<a href="https://www.daum.net/"> 다음 바로가기 </a>		<br>
+	<a href="https://www.google.co.kr/"> 구글 바로가기 </a>	<br>
+	
+
+
+
+</body>
+</html>
