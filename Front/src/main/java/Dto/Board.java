@@ -37,7 +37,7 @@ public class Board {
 			this.btitle = btitle;
 			this.bcontents = bcontents;
 				
-			//private : 혀ㅑㄴ재 클래스에서만 호출 가능
+			//private : 현재 클래스에서만 호출 가능
 			// get, set, 메소드:
 				// 외부로 부터 private 필드 접근
 	}

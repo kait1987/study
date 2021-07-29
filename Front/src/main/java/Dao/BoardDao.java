@@ -163,6 +163,9 @@ public class BoardDao {
 		public ArrayList<Reply> rilst(int bno){
 			
 			String SQL = "select *from reply where bno = ? order by rno DESC" ;
+			
+			
+			
 			ArrayList<Reply> replies = new ArrayList<Reply>();
 			
 			try {
@@ -180,6 +183,7 @@ public class BoardDao {
 					replies.add(reply);
 				}
 				return replies;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 			}

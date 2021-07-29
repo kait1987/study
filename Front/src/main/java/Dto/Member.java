@@ -38,7 +38,9 @@ public class Member {
 		this.mphone = mphone;
 		this.maddress = maddress;
 	}
-
+	
+	// 3. 메소드[ get, set 등]
+	
 	public int getMno() {
 		return mno;
 	}
@@ -96,7 +98,6 @@ public class Member {
 	}
 
 
-	// 3. 메소드[ get, set 등]
 	
 	
 	

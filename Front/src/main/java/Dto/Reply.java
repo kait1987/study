@@ -13,7 +13,6 @@ public class Reply {
 	}
 
 	public Reply(int rno, int bno, String rwriter, String rcontents, String rdate) {
-		
 		this.rno = rno;
 		this.bno = bno;
 		this.rwriter = rwriter;
@@ -22,8 +21,6 @@ public class Reply {
 	}
 	
 	public Reply( int bno, String rwriter, String rcontents, String rdate) {
-		
-		this.rno = rno;
 		this.bno = bno;
 		this.rwriter = rwriter;
 		this.rcontents = rcontents;
