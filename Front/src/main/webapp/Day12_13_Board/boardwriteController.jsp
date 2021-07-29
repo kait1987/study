@@ -44,6 +44,7 @@
 	<!-- 4.다른페이지로 이동 -->
 	<%
 		if ( result == 1 ) response.sendRedirect("boardlist.jsp");
+		else response.sendRedirect("boardwrite.jsp");
 		
 	%>
 </body>

@@ -18,7 +18,6 @@ public class Member {
 
 	// 모든 필드를 받는 생성자
 	public Member(int mno, String mid, String mpassword, String mname, String memail, String mphone, String maddress) {
-		super();
 		this.mno = mno;
 		this.mid = mid;
 		this.mpassword = mpassword;
@@ -29,9 +28,8 @@ public class Member {
 	}
 
 
-// 회원번호 없는 생성자[ 회원가입 컨트롤]
+	// 회원번호 없는 생성자[ 회원가입 컨트롤]
 	public Member(String mid, String mpassword, String mname, String memail, String mphone, String maddress) {
-		super();
 		this.mno = mno;
 		this.mid = mid;
 		this.mpassword = mpassword;
@@ -41,92 +39,68 @@ public class Member {
 		this.maddress = maddress;
 	}
 
-
-
-	public final int getMno() {
+	public int getMno() {
 		return mno;
 	}
 
-
-
-	public final void setMno(int mno) {
+	public void setMno(int mno) {
 		this.mno = mno;
 	}
 
-
-
-	public final String getMid() {
+	public String getMid() {
 		return mid;
 	}
 
-
-
-	public final void setMid(String mid) {
+	public void setMid(String mid) {
 		this.mid = mid;
 	}
 
-
-
-	public final String getMpassword() {
+	public String getMpassword() {
 		return mpassword;
 	}
 
-
-
-	public final void setMpasssord(String mpassword) {
+	public void setMpassword(String mpassword) {
 		this.mpassword = mpassword;
 	}
 
-
-
-	public final String getMname() {
+	public String getMname() {
 		return mname;
 	}
 
-
-
-	public final void setMname(String mname) {
+	public void setMname(String mname) {
 		this.mname = mname;
 	}
 
-
-
-	public final String getMemail() {
+	public String getMemail() {
 		return memail;
 	}
 
-
-
-	public final void setMemail(String memail) {
+	public void setMemail(String memail) {
 		this.memail = memail;
 	}
 
-
-
-	public final String getMphone() {
+	public String getMphone() {
 		return mphone;
 	}
 
-
-
-	public final void setMphone(String mphone) {
+	public void setMphone(String mphone) {
 		this.mphone = mphone;
 	}
 
-
-
-	public final String getMaddress() {
+	public String getMaddress() {
 		return maddress;
 	}
 
-
-
-	public final void setMaddress(String maddress) {
+	public void setMaddress(String maddress) {
 		this.maddress = maddress;
 	}
-	
-	
-	
+
+
 	// 3. 메소드[ get, set 등]
+	
+	
+	
+	
+	
 	
 }

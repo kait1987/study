@@ -56,7 +56,7 @@ public class MemberDao {
 		} catch (Exception e) {}
 			return 0;
 	}
-	
+	// 2. 로그인 메소드
 	public int login( String mid , String mpassword ) {
 		
 		String SQL ="select * from member where mid =? and mpassword = ? ";

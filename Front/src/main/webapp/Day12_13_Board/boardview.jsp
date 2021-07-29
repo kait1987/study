@@ -1,3 +1,5 @@
+<%@page import="Dto.Reply"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="Dto.Board"%>
 <%@page import="Dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -44,15 +46,47 @@
 	
 	<!-- 댓글 -->
 	<hr>
-	<br>
+	<h4>댓글 쓰기</h4>
 	<form action="replywriterController" method="post">
-		작성자 내용  <br>
-			<input type="text" name="rwriter" size="10">
-		 	<textarea rows="" cols="" name="rcontents"></textarea> <br>
+		
+		<table>
+			<tr>
+				<th>작성자</th> <th>내용</th> <td></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="rwriter" size="10"></td>
+		 		<td><textarea rows="" cols="" name="rcontents"></textarea> </td>
+		 		<td><input type="submit" value="등록"></td>
+		 	</tr>
+		 </table>
 		 	<!-- 현재 게시시물번호 [댓글 식별용] --> <input type="hidden" value="<%=bno%>" name="bno">
-		 	<input type="submit" value="등록">
-	
 	</form>
+	
+	<hr>
+	<br>
+	<h4> 댓글 목록</h4>
+	<table>
+		<tr>
+			<td>작성자</td> <td>댓글내용</td> <td>작성일</td>
+		</tr>
+		
+		<%
+			ArrayList<Reply> replies = boardDao.rilst(bno);
+			for( Reply reply : replies) {
+				
+		%>
+			<tr>
+				<td><%=reply.getRwriter() %></td>
+				<td><%=reply.getRcontents() %></td>
+				<td><%=reply.getRdate() %></td>
+				<td> <a href="replydeleteController.jsp?rno=<%=reply.getRno()%>&bno=<%=bno%>"> <button>삭제</button> </a> 
+				<td> <a href="#"> <button>수정</button> </a>
+			</tr>
+			<%
+			}
+			%>
+	</table>
+	
 	
 
 </body>

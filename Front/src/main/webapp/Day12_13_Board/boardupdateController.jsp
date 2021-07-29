@@ -19,12 +19,7 @@
 		int bno = Integer.parseInt(request.getParameter("bno") ); 	// 게시물 번호
 		String btitle = request.getParameter("btitle");				// 게시물 제목
 		String bcontents = request.getParameter("bcontents");		// 게시물 내용
-		
-			// 날짜
-			Date date = new Date(); // 현재날짜/시간 객체
-			// 날짜형식 
-			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd hh:mm:ss");
-			String bdate = simpleDateFormat.format(date);
+					
 	 %>
 	<!-- 2. 요청된 데이터 객체화 -->
 	<%

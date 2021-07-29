@@ -30,46 +30,46 @@ public class Reply {
 		this.rdate = rdate;
 	}
 
-	public final int getRno() {
+	public int getRno() {
 		return rno;
 	}
 
-	public final void setRno(int rno) {
+	public void setRno(int rno) {
 		this.rno = rno;
 	}
 
-	public final int getBno() {
+	public int getBno() {
 		return bno;
 	}
 
-	public final void setBno(int bno) {
+	public void setBno(int bno) {
 		this.bno = bno;
 	}
 
-	public final String getRwriter() {
+	public String getRwriter() {
 		return rwriter;
 	}
 
-	public final void setRwriter(String rwriter) {
+	public void setRwriter(String rwriter) {
 		this.rwriter = rwriter;
 	}
 
-	public final String getRcontents() {
+	public String getRcontents() {
 		return rcontents;
 	}
 
-	public final void setRcontents(String rcontents) {
+	public void setRcontents(String rcontents) {
 		this.rcontents = rcontents;
 	}
 
-	public final String getRdate() {
+	public String getRdate() {
 		return rdate;
 	}
 
-	public final void setRdate(String rdate) {
+	public void setRdate(String rdate) {
 		this.rdate = rdate;
 	}
-	
+
 	
 	
 }

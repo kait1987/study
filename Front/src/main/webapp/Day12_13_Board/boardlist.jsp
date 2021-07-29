@@ -12,7 +12,7 @@
 <body>
 	<h3>글목록 페이지</h3>
 	<a href="boardwrite.jsp"><button>글쓰기</button></a>
-		<table>
+		<table border="1">
 			<tr>
 				<th> 번호 </th>
 				<th> 제목 </th>
@@ -32,7 +32,8 @@
 			%>
 			<tr> <!-- for문이용이한 출력 -->
 				<td><%=board.getBno()%></td>
-				<td><%=board.getBtitle()%></td>
+				<td><a href="boardview.jsp?bno=<%=board.getBno() %>"> <%=board.getBtitle()%> </a></td>
+				<!-- 링크에 매개변수 보내기 : href="파일명?변수명=값" -->
 				<td><%=board.getBwriter()%></td>
 				<td><%=board.getBdate()%></td>
 				<td><%=board.getBcount()%></td>

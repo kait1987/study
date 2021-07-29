@@ -35,5 +35,5 @@ create table jspweb.reply(
     rcontents varchar(1000) ,
     rdate varchar(100) ,
     
-    foreign key(bno) references board(bno)
+    foreign key(bno) references board(bno) on delete CASCADE
     )

@@ -32,7 +32,7 @@
 		작성자 : <input type="text" name="bwriter" size="10" value="<%=board.getBwriter()%>" disabled="disabled"> <br>
 		내용 : <textarea rows="10" cols="40" style="resize: none" name="bcontents"><%=board.getBcontents() %></textarea> <br> 
 		<input type="submit" value="수정"> 
-		<a href="boardview.jsp?bno=<%=bno%>"><button>취소</button></a>
+		<a href="boardview.jsp?bno=<%=bno%>">
 	</form>
 
 </body>
