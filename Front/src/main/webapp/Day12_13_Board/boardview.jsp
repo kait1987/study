@@ -22,7 +22,7 @@
 		
 	%>
 	<a href="boardlist.jsp"><button>목록</button> </a>
-	<a href="#"><button>수정</button> </a>
+	<a href="boardupdate?bno=<%=bno%>"><button>수정</button> </a>
 	<a href="boarddeletecontroller.jsp?bno=<%=bno%>"><button>삭제</button> </a>
 	<table border="1">
 		<tr>
@@ -42,7 +42,17 @@
 		
 	</table>
 	
+	<!-- 댓글 -->
+	<hr>
+	<br>
+	<form action="replywriterController" method="post">
+		작성자 내용  <br>
+			<input type="text" name="rwriter" size="10">
+		 	<textarea rows="" cols="" name="rcontents"></textarea> <br>
+		 	<!-- 현재 게시시물번호 [댓글 식별용] --> <input type="hidden" value="<%=bno%>" name="bno">
+		 	<input type="submit" value="등록">
 	
+	</form>
 	
 
 </body>

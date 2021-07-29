@@ -15,10 +15,16 @@ public class Board {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
 	public Board(int bno, String btitle, String bcontents, String bwriter, String bdate, int bcount) {
-		super();
 		this.bno = bno;
+		this.btitle = btitle;
+		this.bcontents = bcontents;
+		this.bwriter = bwriter;
+		this.bdate = bdate;
+		this.bcount = bcount;
+	}	
+	// DB에 저장할때 [게시물번호는 제외]
+	public Board( String btitle, String bcontents, String bwriter, String bdate, int bcount) {
 		this.btitle = btitle;
 		this.bcontents = bcontents;
 		this.bwriter = bwriter;
@@ -26,15 +32,14 @@ public class Board {
 		this.bcount = bcount;
 	}
 		
-		
-		public Board( String btitle, String bcontents, String bwriter, String bdate, int bcount) {
-			super();
+		//DB에 수정할때 [게시물번호, 날짜, 조회수 제외]
+		public Board( String btitle, String bcontents) {
 			this.btitle = btitle;
 			this.bcontents = bcontents;
-			this.bwriter = bwriter;
-			this.bdate = bdate;
-			this.bcount = bcount;
-	
+				
+			//private : 혀ㅑㄴ재 클래스에서만 호출 가능
+			// get, set, 메소드:
+				// 외부로 부터 private 필드 접근
 	}
 	public final int getBno() {
 		return bno;

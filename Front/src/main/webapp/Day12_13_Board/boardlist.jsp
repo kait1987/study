@@ -29,8 +29,6 @@
 				
 				for(Board board : boards ){
 				
-				
-			
 			%>
 			<tr> <!-- for문이용이한 출력 -->
 				<td><%=board.getBno()%></td>

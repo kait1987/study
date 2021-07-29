@@ -22,7 +22,8 @@ public class BoardDao {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306//jspweb?serverTimezone=UTC", "root", "1234");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspweb?serverTimezone=UTC", "root", "1234");
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -43,7 +44,7 @@ public class BoardDao {
 			
 			statement.executeUpdate();
 		
-		return 1;
+			return 1;
 		} catch (Exception e) {}
 			return 0;
 	}
@@ -53,7 +54,7 @@ public class BoardDao {
 		
 		ArrayList<Board> boards = new ArrayList<Board>();
 		
-		String SQL = "select * from board"; // ���Ǿ��� ��� �˻� 
+		String SQL = "select * from board"; // 
 		try {
 			PreparedStatement statement = conn.prepareStatement(SQL);
 			resultSet = statement.executeQuery();
@@ -74,7 +75,7 @@ public class BoardDao {
 		
 		return null;
 	}
-	// 3. �Խù���ȣ�� �̿��� �Խù� ��� �޼ҵ� 
+	// 3. 
 		public Board bview( int bno ) {
 			
 			String SQL = "select * from board where bno = ? ";
@@ -100,7 +101,7 @@ public class BoardDao {
 			return null;
 		}
 		
-		// 4. �Խù���ȣ�� �̿��� �Խù� ���� �޼ҵ� 
+		// 4. 
 		public int bdelete( int bno) {
 			
 			String SQL = "Delete from board where bno = ?";
@@ -114,7 +115,30 @@ public class BoardDao {
 			return 0 ;
 		}
 		
-			
+		// 5. 게시물 내용과 제목 업데이트 메소드
 		
+		public int bupdate(int bno , Board board) {
+			
+			String SQL = "update board set btitle=? , bcontents=? where bno = ? ";
+			
+			try {
+				PreparedStatement statement = conn.prepareStatement(SQL);
+				statement.setString(1, board.getBtitle() );
+				statement.setString(2, board.getBcontents() );
+				statement.setInt(3, bno);
+				
+				statement.executeUpdate();
+				return 1;
+			} catch (Exception e) {}
+				
+			return 0;
+		}
+			
+		// 6. 댓글 쓰기 메소드
+		
+		
+		// 7. 게시물번호에 해당하는 댓글 출력
+		
+		// 8. 댓글 삭제
 	
 }

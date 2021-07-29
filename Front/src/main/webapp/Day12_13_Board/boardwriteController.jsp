@@ -19,7 +19,7 @@
 		String btitle = request.getParameter("btitle");
 		String bwriter = request.getParameter("bwriter");
 		String bcontents = request.getParameter("bcontents");
-		
+
 			// 날짜
 			Date date = new Date(); // 현재날짜/시간 객체
 			// 날짜형식 
@@ -36,11 +36,15 @@
 	<%
 		BoardDao boardDao = BoardDao.getinstance();
 		int result = boardDao.bwrite(board);
+
+	
+		
+		
 	%>
 	<!-- 4.다른페이지로 이동 -->
 	<%
-		if ( result == 1 ) response.sendRedirect("boardlist,jsp");
-		else response.sendRedirect("boardwrite.jsp");
+		if ( result == 1 ) response.sendRedirect("boardlist.jsp");
+		
 	%>
 </body>
 </html>
