@@ -190,5 +190,32 @@ public class BoardDao {
 			return null;
 		}
 		// 8. 댓글 삭제
-	
+		public int rdelete( int rno) {
+			
+			String SQL = "Delete from reply where rno = ?";
+			
+			try {
+				PreparedStatement statement = conn.prepareStatement(SQL);
+				statement.setInt(1, rno);
+				statement.executeUpdate();
+				return 1;
+				
+			} catch (Exception e) {	}
+			return 0;
+		}
+		
+		
+		// 9. 
+		public void bcountup( int bno) {
+			
+			String SQL = "update board set bcount = bcount + 1 where bno = ?";
+			try {
+				PreparedStatement statement = conn.prepareStatement(SQL);
+				statement.setInt(1, bno);
+				statement.executeUpdate();
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 }

@@ -47,8 +47,8 @@
 	<!-- 댓글 -->
 	<hr>
 	<h4>댓글 쓰기</h4>
-	<form action="replywriterController" method="post">
-		
+	<form action="replywriterController.jsp" method="post">
+			
 		<table>
 			<tr>
 				<th>작성자</th> <th>내용</th> <td></td>
@@ -67,7 +67,7 @@
 	<h4> 댓글 목록</h4>
 	<table>
 		<tr>
-			<td>작성자</td> <td>댓글내용</td> <td>작성일</td>
+			<td>작성자</td> <td>댓글내용</td> <td>작성일</td> <td>비고</td> 
 		</tr>
 		
 		<%
