@@ -17,11 +17,11 @@
 	<%
 		// 수정할 게시물의 정보 가져오기 
 		request.setCharacterEncoding("UTF-8");
-		int nno =Integer.parseInt( request.getParameter("nno") );
-		
+		int nno = Integer.parseInt(request.getParameter("nno"));
+			
 		NoticeDao noticeDao = NoticeDao.getinstance();
-		NoticeDto noticeDto = noticeDao.getnotice(nno);
-		
+		NoticeDto noticeDto =  noticeDao.getnotice(nno);
+			
 		String ncontents = noticeDto.getNcontents().replace("<br>", "\r\n");
 	%>
 
@@ -39,12 +39,12 @@
 				<input type="text" class="form-control" name="title" maxlength="30" value="<%=noticeDto.getNtitle()%>">
 			</div>
 			
-			<div tyle="margin-top: 30px;">
+			<div style="margin-top: 30px;">
 				<label>내용</label>
 				<textarea rows="5" cols="" style="resize: none;" class="form-control" name="contents"><%=ncontents%></textarea>
 			</div>
 			
-			<div tyle="margin-top: 30px;">
+			<div style="margin-top: 30px;">
 				<label>첨부파일</label>
 				<input type="file" class="form-control" name="file" > 기존파일명 : <%=noticeDto.getNfile() %>
 				

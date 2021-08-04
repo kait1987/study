@@ -43,7 +43,7 @@
 		if( nfile == null ){
 			nfile = nfile2; // 기존파일 요청해서 파일명에 넣어주기
 		}else{ // 새로운 첨부파일이 있을경우 기존 첨부파일 폴더에서 삭제
-			File file = new File( "C:/Users/me/git/study/Front/src/main/webapp/upload/" +nfile2);
+			File file = new File( "C:/Users/me/git/study/Front/src/main/webapp/upload/"+nfile2);
 			file.delete();
 			
 		}
