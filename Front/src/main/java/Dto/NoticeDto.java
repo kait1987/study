@@ -32,9 +32,17 @@ public class NoticeDto {
 		this.nfile = nfile;
 	}
 	
+	// 게시물 수정용
+	public NoticeDto(String ntitle, String ncontents, String nfile) {		
+		this.ntitle = ntitle;
+		this.ncontents = ncontents;
+		this.nfile = nfile;
+	}
+	
 	public int getNno() {
 		return nno;
 	}
+	
 	public void setNno(int nno) {
 		this.nno = nno;
 	}

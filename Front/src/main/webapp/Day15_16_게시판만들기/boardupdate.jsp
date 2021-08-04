@@ -1,3 +1,5 @@
+<%@page import="Dto.NoticeDto"%>
+<%@page import="Dao.NoticeDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,26 +13,42 @@
 	<%
 		// 유효성 검사 : js
 	%>
+	
+	<%
+		// 수정할 게시물의 정보 가져오기 
+		request.setCharacterEncoding("UTF-8");
+		int nno =Integer.parseInt( request.getParameter("nno") );
+		
+		NoticeDao noticeDao = NoticeDao.getinstance();
+		NoticeDto noticeDto = noticeDao.getnotice(nno);
+		
+		String ncontents = noticeDto.getNcontents().replace("<br>", "\r\n");
+	%>
 
 	<%@include file="menu.jsp" %>
 				<!-- container width : 1200px -->
 	<div class="container">
 		
 		<h3>글 작성</h3>
-		<form name="boardform" method="post" action="boardwritecontroller.jsp" enctype="multipart/form-data" onsubmit="return boardcheck()">
+		<form name="boardform" method="post" action="boardupdatecontroller.jsp" enctype="multipart/form-data" onsubmit="return boardcheck()">
+			
+			<input type="hidden" value="<%=nno%>" name="nno">
+			
 			<div style="margin-top: 30px;">
 				<label>제목</label>
-				<input type="text" class="form-control" name="title" maxlength="30">
+				<input type="text" class="form-control" name="title" maxlength="30" value="<%=noticeDto.getNtitle()%>">
 			</div>
 			
 			<div tyle="margin-top: 30px;">
 				<label>내용</label>
-				<textarea rows="5" cols="" style="resize: none;" class="form-control" name="contents"></textarea>
+				<textarea rows="5" cols="" style="resize: none;" class="form-control" name="contents"><%=ncontents%></textarea>
 			</div>
 			
 			<div tyle="margin-top: 30px;">
 				<label>첨부파일</label>
-				<input type="file" class="form-control" name="file" >
+				<input type="file" class="form-control" name="file" > 기존파일명 : <%=noticeDto.getNfile() %>
+				
+				<input type="hidden" name="file2" value="<%=noticeDto.getNfile() %>">  
 			</div>
 			
 			<div>
