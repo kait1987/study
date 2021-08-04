@@ -42,6 +42,8 @@ public class NoticeDao {
 			
 			statement.executeUpdate();
 			
+			return 1;
+			
 		} catch (Exception e) {}
 			return 0;
 		
@@ -51,7 +53,8 @@ public class NoticeDao {
 		
 		ArrayList<NoticeDto> noticeDtos = new ArrayList<NoticeDto>();
 		
-		String SQL = "selec * from notice";
+		String SQL = "select * from notice order by nno DESC";
+						// t
 		try {
 			PreparedStatement statement = connection.prepareStatement(SQL);
 			
@@ -75,4 +78,80 @@ public class NoticeDao {
 		}
 	}
 
+	// 검색이 있는 경우 게시물 출력
+	public ArrayList<NoticeDto> noticekeyword( String key, String keyword){
+		
+		ArrayList<NoticeDto> noticeDtos = new ArrayList<NoticeDto>();
+		
+		//String SQL = "select * from notice where" "+key+" like '%"+keyword+"%'"
+		// 키워드 포함된 필드 찾기
+		
+		
+		String SQL = "select * from notice where "+key+" like '%"+keyword+"%' order by nno DESC";
+													// 필드명 = 찾을값 [해당 필드에서 값이 동일한 레코드 찾기]
+													// 필드명 like '%찾을값%'
+		
+		try {
+			PreparedStatement preparstStatement = connection.prepareStatement(SQL);
+			resultSet = preparstStatement.executeQuery();
+			
+			while (resultSet.next() ) {
+				NoticeDto noticeDto = new NoticeDto(
+						resultSet.getInt(1),
+						resultSet.getString(2),
+						resultSet.getString(3),
+						resultSet.getString(4),
+						resultSet.getString(5),
+						resultSet.getInt(6),
+						resultSet.getString(7) );
+				noticeDtos.add(noticeDto);
+			}
+			return noticeDtos;
+			
+		} catch (Exception e) {	}
+			return null;
+		
+	}
+	// 게시물 개별 조회
+	public NoticeDto getnotice( int nno) {
+		
+		String SQL = "select * from notice where nno + ?";
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setInt(1, nno);
+			
+			resultSet = preparedStatement.executeQuery();
+			
+			if (resultSet.next() ) {
+				
+				NoticeDto noticeDto = new NoticeDto(
+						resultSet.getInt(1),
+						resultSet.getString(2),
+						resultSet.getString(3),
+						resultSet.getString(4),
+						resultSet.getString(5),
+						resultSet.getInt(6),
+						resultSet.getString(7) );
+				return noticeDto;
+						
+			}
+		} catch (Exception e) { }
+		return null;
+	}
+	
+	
+	// 게시물 삭제 메소드
+	public int noticedel( int nno) {
+		
+		String SQL = "delete from notice where nno =?";
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setInt(1, nno);
+			
+			preparedStatement.executeUpdate();
+			
+			return 1;
+		} catch (Exception e) {	}
+		return 0;
+	}
 }

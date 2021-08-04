@@ -1,17 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 
-	<!-- ºÎÆ®½ºÆ®·¦ CDN -->
+	<!-- ë¶€íŠ¸ìŠ¤íŠ¸ë© CDN -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-	<!-- À¥ÆäÀÌÁö ÀüÃ¼ ÆùÆ® ´«´© -->
+	<!-- ì›¹í˜ì´ì§€ ì „ì²´ í°íŠ¸ ëˆˆëˆ„ -->
 	<style type="text/css">
 		 @font-face {
     	font-family: 'ONE-Mobile-POP';
@@ -20,7 +20,7 @@
     	font-style: normal;
 		}
 		
-		/* ¸ğµç °÷¿¡ ±âº»ÆùÆ® Àû¿ë*/
+		/* ëª¨ë“  ê³³ì— ê¸°ë³¸í°íŠ¸ ì ìš©*/
 		*{font-family: 'ONE-Mobile-POP';}
 		
 		a{
@@ -41,7 +41,7 @@
 	<nav class="navbar navbar-default">
 		<div>
 			<ul>
-				<li> <a href="baordlist.jsp"> Ä¿¹Â´ÏÆ¼</a> </li>
+				<li> <a href="baordlist.jsp"> ì»¤ë®¤ë‹ˆí‹°</a> </li>
 			</ul>
 		</div>
 	</nav>
