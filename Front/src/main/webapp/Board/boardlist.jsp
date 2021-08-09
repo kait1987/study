@@ -14,7 +14,7 @@
 <body>
 
 
-	<%@include file="menu.jsp" %>
+	<%@include file="../index/menu.jsp" %>
 	
 	<div class="container">
 	
@@ -24,7 +24,7 @@
 			<thead>
 				<tr>
 					<th> 번호 </th>
-					<th> 이미지 </th>
+					<th> 대표 이미지 </th>
 					<th> 제목 </th>
 					<th> 작성자 </th>
 					<th> 작성일 </th>
@@ -84,7 +84,21 @@
 			</tbody>		
 		</table>
 		
-		<a href="boardwrite.jsp" class="btn btn-info pull-right">글작성</a>
+		<%
+			// 로그인 세션이 있을 경우에만 글 작성
+				// String loginid = (String)session.getAttribute("loginid");
+				// 메뉴에 선언되어 있어서 주석
+			if( loginid != null){
+		%>			
+			<a href="boardwrite.jsp" class="btn btn-info pull-right">글작성</a>
+		<% 
+			}else{
+		%>
+			<div align="right"> 로그인후 사용 가능합니다</div>
+		<% 
+			}
+		%>
+		
 		
 		 <form method="post" action="boardlist.jsp">
 		 	<table	style="margin: 0 auto;">

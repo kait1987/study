@@ -12,7 +12,7 @@
 		// 유효성 검사 : js
 	%>
 
-	<%@include file="menu.jsp" %>
+	<%@include file="../index/menu.jsp" %>
 				<!-- container width : 1200px -->
 	<div class="container">
 		

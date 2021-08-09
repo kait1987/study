@@ -1,5 +1,4 @@
-<%@page import="Dto.Board"%>
-<%@page import="Dao.BoardDao"%>
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>

@@ -26,11 +26,11 @@ public class BcommentDto {
 		this.bcwriter = bcwriter;
 	}
 
-	public int getBcnot() {
+	public int getBcno() {
 		return bcno;
 	}
 
-	public void setBcnot(int bcnot) {
+	public void setBcno(int bcno) {
 		this.bcno = bcno;
 	}
 

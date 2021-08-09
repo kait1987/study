@@ -10,24 +10,27 @@
 </head>
 <body>
 
-
+	
 	<%
-		String loginid = (String)session.getAttribute("loginid");
-		
+	
+		String loginid =  (String)session.getAttribute("loginid");
+	
 		request.setCharacterEncoding("UTF-8");
-		int nno = Integer.parseInt(request.getParameter("nno") );
-		String bcontents = request.getParameter("contents");
+		int  nno = Integer.parseInt(request.getParameter("nno"));
+		String bccontents = request.getParameter("contents");
 		
-		// 객체
-		BcommentDto bcommentDto = new BcommentDto( nno, bccontents, loginid);
+		// 객체 
+		BcommentDto bcommentDto = new BcommentDto( nno , bccontents , loginid );
 		
-		BcommentDao bcommentDao= BcommentDao.getinstance();
-		int result = bcommentDao.bcommentwrite(bcommentDto);
-		if( result == 1) {
+		BcommentDao bcommentDao = BcommentDao.getinstance();
+		int result =  bcommentDao.bcommentwrite(bcommentDto);
+		if( result == 1 ) {
 			response.sendRedirect("boardview.jsp?nno="+nno);
 		}else{
 			response.sendRedirect("boardview.jsp?nno="+nno);
 		}
+		
 	%>
+
 </body>
 </html>

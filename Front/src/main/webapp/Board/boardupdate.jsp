@@ -25,7 +25,7 @@
 		String ncontents = noticeDto.getNcontents().replace("<br>", "\r\n");
 	%>
 
-	<%@include file="menu.jsp" %>
+	<%@include file="../index/menu.jsp" %>
 				<!-- container width : 1200px -->
 	<div class="container">
 		

@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
-			<div align="conter">
+			<div align="center">
 				<img alt="" src="../img/logo2.png" width="100px;" style="margin: 30px;">
 			</div>
 		<form method="post" action="logincontroller.jsp">
