@@ -45,7 +45,7 @@ public class NoticeDao {
 			return 1;
 			
 		} catch (Exception e) {}
-			return 0;
+		return 0;
 		
 	}
 	// 모든 게시물 출력
@@ -73,9 +73,10 @@ public class NoticeDao {
 			}
 			return noticeDtos;
 			
-		} catch (Exception e) {
-			return null;
+		} 
+		catch (Exception e) {
 		}
+		return null;
 	}
 
 	// 검색이 있는 경우 게시물 출력
@@ -108,8 +109,9 @@ public class NoticeDao {
 			}
 			return noticeDtos;
 			
-		} catch (Exception e) {	}
-			return null;
+		} 
+		catch (Exception e) {	}
+		return null;
 		
 	}
 	// 게시물 개별 조회
@@ -135,7 +137,8 @@ public class NoticeDao {
 				return noticeDto;
 						
 			}
-		} catch (Exception e) { }
+		} catch (Exception e) { 
+		}
 		return null;
 	}
 	
@@ -162,9 +165,11 @@ public class NoticeDao {
 		
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-			preparedStatement.setString(1, noticeDto.getNtitle() );
-			preparedStatement.setString(2, noticeDto.getNcontents() );
-			preparedStatement.setString(3, noticeDto.getNfile() );
+			preparedStatement.setString(1, noticeDto.getNtitle());
+			preparedStatement.setString(2, noticeDto.getNcontents());
+			preparedStatement.setString(3, noticeDto.getNfile());
+			preparedStatement.setInt(4, nno );
+			
 			preparedStatement.executeUpdate();
 			
 			return 1;

@@ -28,7 +28,6 @@
 </style>
 </head>	
 <body>
-
 	<nav class="navbar navbar-default navbar-fixed-top" style="background-color: white;">
 		<div class="container">
 			<div class="navbar-header">
@@ -108,8 +107,19 @@
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">
-					<li> <a href="#" style="font-size: 13px;">로그인</a> </li>
-					<li> <a href="#" style="font-size: 13px;">공지사항</a> </li>
+				<%
+					// day11 로그인컨트롤에서 세션 부여 받은 후 코드
+					
+					String logid = (String)session.getAttribute("logid");
+					if( logid !=null){
+					%>
+						<li> <%=logid %>님 안녕하세요</li>
+					<%	
+					}
+					
+				%>
+					<li> <a href="boardlist.jsp" style="font-size: 13px;">공지사항</a> </li>
+					<li> <a href="#" style="font-size: 13px;">로그인</a> </li>					
 					<li> <a href="#" style="font-size: 13px;">회원가입</a> </li>
 					<li> <a href="#" style="font-size: 13px;">로그아웃</a> </li>
 					<li> <a href="#" style="font-size: 13px;">관리자페이지</a> </li>
