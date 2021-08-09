@@ -67,4 +67,33 @@ public class UserDao {
 		}
 	}
 	
+	//
+	
+	//
+	
+	public UserDto getuser( String uid) {
+		
+		String SQL = "SELECT * from user where uid=?";
+		
+		try {
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setString(1, uid);
+			
+			resultSet = preparedStatement.executeQuery();
+			
+			if( resultSet.next()) {
+				UserDto userDto = new UserDto(
+						resultSet.getInt(1), 
+						resultSet.getString(2),
+						null,
+						resultSet.getString(4),
+						resultSet.getString(5),
+						resultSet.getString(6),
+						resultSet.getInt(7) );
+				return userDto;
+			}
+		} catch (Exception e) { }
+		return null;
+	}
 }

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="../Index/menu.jsp" %>
+<%@include file="../index/menu.jsp" %>
 
 	<div class="container">
 		
@@ -86,7 +86,7 @@
 			
 	</div>
 
-<%@include file="../Index/footer.jsp" %>
+<%@include file="../index/footer.jsp" %>
 
 </body>
 </html>

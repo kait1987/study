@@ -1,3 +1,19 @@
+
+DB 연동 
+	1. mysql-connector-java-8.0.25 라이브러리 추가 
+		1. WEB-INF => lib 폴더에 넣기 
+		2. 프로젝트에서 라이브러리 => classpath에서 라이브러리 추가 
+	2.
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:포트번호/DB명?serverTimezone=UTC", "DB계정명" , "DB비밀번호" );
+	
+
+* DB 연동 실패 했을때 
+	1. 라이브러리 유무 
+	2. DB 연동 URL 
+	3. SQL 오타 확인 
+	4. 객체 문제 확인
+
+
 jsp : html 내 태그 이용한 java 작성
 	1. 태그
 		1. <%! 선언문 %> : 전역변수 , 메소드 
@@ -22,6 +38,23 @@ jsp : html 내 태그 이용한 java 작성
 			* 개인정보가 있는 데이터
 				1. 세션설정 : session.setAttribute("세션이름" , 데이터 ) 
 				2. 세션호출 : session.getAttribute("세션이름") 
+				3. 세션초기화 : session.invalidate()
+	
+	4. 링크[ 페이지 이동 ]  
+		html : <a href=url >
+		js : location.href=url
+		jsp : response.sendRedirect( url ) 
+		
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 				

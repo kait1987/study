@@ -18,3 +18,12 @@ uaddress varchar(1000) not null,
 uemail varchar(30) not null,
 upoint int(30) not null
 )
+
+create table jspweb.bcomment(
+bcno int primary key auto_increment,
+nno int not null,
+bccontents varchar(2000) not null,
+bcwriter varchar(100) not null,
+bcdate datetime default current_timestamp not null,
+foreign key(nno) references notice(nno) on delete cascade
+)
