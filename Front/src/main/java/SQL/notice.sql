@@ -27,3 +27,19 @@ bcwriter varchar(100) not null,
 bcdate datetime default current_timestamp not null,
 foreign key(nno) references notice(nno) on delete cascade
 )
+
+create table jspweb.product(
+
+product_code int primary key auto_increment ,
+    product_name varchar(200) not null ,
+    product_comment varchar(10000) not null ,
+    product_price int not null ,
+    product_manufacturer varchar(200) not null ,
+    product_category varchar(100) not null ,
+    product_stock int not null ,
+    product_releasedate varchar(100) not null ,
+    product_img varchar(1000) , 
+    product_active int ,
+    product_salesrate int , 
+    product_amount int
+)

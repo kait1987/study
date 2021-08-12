@@ -86,7 +86,7 @@ public class UserDao {
 				UserDto userDto = new UserDto(
 						resultSet.getInt(1), 
 						resultSet.getString(2),
-						null,
+						resultSet.getString(3),
 						resultSet.getString(4),
 						resultSet.getString(5),
 						resultSet.getString(6),
@@ -95,5 +95,36 @@ public class UserDao {
 			}
 		} catch (Exception e) { }
 		return null;
+	}
+	//
+	public int userupdate( int nno, UserDto userDto) {
+		String sql = "update user set upassword=? , uname=? , uaddress=? , uemail =? , where uno = ?";
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, userDto.getUpassword() );
+			preparedStatement.setString(2, userDto.getUname() );
+			preparedStatement.setString(3, userDto.getUaddress() );
+			preparedStatement.setString(4, userDto.getUemail() );
+			preparedStatement.setInt(5, nno );
+			preparedStatement.executeUpdate();
+			return 1;
+		} catch (Exception e) { }
+		return 0;
+	}
+	
+	//
+	
+	public int userdelete( int uno, String password) {
+		
+		String SQL = "delete from user where uno=? and upassword=?";
+							//
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setInt(1, uno);
+			preparedStatement.setString(2, password);
+			preparedStatement.executeUpdate();
+			return 1;
+		} catch (Exception e) { }
+		return 0;
 	}
 }
