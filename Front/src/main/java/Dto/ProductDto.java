@@ -34,7 +34,7 @@ public class ProductDto {
 		this.product_amount = product_amount;
 	}
     
-	// 
+	// 제품등록
 	public ProductDto( String product_name, String product_comment, int product_price,
 			String product_manufacturer, String product_category, int product_stock, String product_releasedate,
 			String product_img) {
