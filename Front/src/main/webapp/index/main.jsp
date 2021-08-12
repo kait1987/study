@@ -28,18 +28,15 @@
 		
 				<div class="carousel-inner">
 					<div class="item active">
-						<a href="#"><img src="../img/main1.png" class="img-responsive center-block" ></a>
+						<a href="#"><img src="../img/main1.jpg" class="img-responsive center-block" ></a>
 					</div>
 					<div class="item">
-						<a href="#"><img src="../img/main2.png" class="img-responsive center-block" ></a>
+						<a href="#"><img src="../img/main2.jpg" class="img-responsive center-block" ></a>
 					</div>
 					<div class="item">
-						<a href="#"><img src="../img/main3.png" class="img-responsive center-block" ></a>
+						<a href="#"><img src="../img/main3.jpg" class="img-responsive center-block" ></a>
 					</div>
-					<div class="item">
-						<a href="#"><img src="../img/main4.png" class="img-responsive center-block" ></a>
-					</div>
-					
+										
 				</div>
 				
 			<a class="left carousel-control" href="#mycarousel" data-slide="prev">

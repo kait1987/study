@@ -16,7 +16,7 @@
 			<!-- 현재 가로길이를 12등분 했을때  -->
 			<div class="col-md-3">
 				<!-- 관리자 사이드바 포함 -->
-				<%@include file=".,/admin/adminsiebar.jsp" %>
+				<%@include file="../admin/adminsiebar.jsp" %>
 			</div>
 			
 			<!-- 공백 -->
