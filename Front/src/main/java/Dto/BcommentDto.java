@@ -25,7 +25,8 @@ public class BcommentDto {
 		this.bccontents = bccontents;
 		this.bcwriter = bcwriter;
 	}
-
+	// get. set
+	
 	public int getBcno() {
 		return bcno;
 	}
@@ -66,7 +67,7 @@ public class BcommentDto {
 		this.bcdate = bcdate;
 	}
 	
-	// get. set
+	
 	
 		
 

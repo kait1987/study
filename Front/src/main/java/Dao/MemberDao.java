@@ -37,7 +37,7 @@ public class MemberDao {
 		// 1. SQL 작성
 		String SQL = "insert into member(mid , mpassword, mname, memail, mphone, maddress)" +"values(?,?,?,?,?,?)";
 		
-		// 2. SQl
+		// 2. SQL 조작
 		try {
 			PreparedStatement statement = conn.prepareStatement(SQL);
 			statement.setString(1, member.getMid() );
@@ -49,7 +49,7 @@ public class MemberDao {
 			
 			
 			
-		// 3. SQL
+		// 3. SQL 실행
 			statement.executeUpdate();
 			return 1;
 			

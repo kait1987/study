@@ -205,7 +205,7 @@ public class BoardDao {
 		}
 		
 		
-		// 9. 
+		// 9. 게시물 조회수 증가
 		public void bcountup( int bno) {
 			
 			String SQL = "update board set bcount = bcount + 1 where bno = ?";

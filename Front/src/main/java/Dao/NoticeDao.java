@@ -54,7 +54,7 @@ public class NoticeDao {
 		ArrayList<NoticeDto> noticeDtos = new ArrayList<NoticeDto>();
 		
 		String SQL = "select * from notice order by nno DESC";
-						// t
+						
 		try {
 			PreparedStatement statement = connection.prepareStatement(SQL);
 			

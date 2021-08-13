@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import Dto.ProductDto;
 
@@ -59,7 +60,37 @@ public class ProductDao {
 	}	
 	
 	// 2. 제품 목록 조회
-	
+	public ArrayList<ProductDto> productlist() {
+		
+		ArrayList<ProductDto> productDtos = new ArrayList<ProductDto>();
+		
+		String SQL = "select * from product";
+		
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			resultSet = preparedStatement.executeQuery();
+			
+			while( resultSet.next() ) {
+				ProductDto productDto = new ProductDto(
+							resultSet.getInt(1),
+							resultSet.getString(2),
+							resultSet.getString(3),
+							resultSet.getInt(4),
+							resultSet.getString(5),
+							resultSet.getString(6),
+							resultSet.getInt(7),
+							resultSet.getString(8),
+							resultSet.getString(9),
+							resultSet.getInt(10),
+							resultSet.getInt(11),
+							resultSet.getInt(12) );
+				productDtos.add(productDto);
+			}
+			return productDtos;
+			
+		} catch (Exception e) { }
+		return null;
+	}
 	// 3. 제품 개별 조회
 	
 	// 4. 제품 수정

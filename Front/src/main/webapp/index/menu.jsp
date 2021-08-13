@@ -35,19 +35,23 @@
 	
 </head>
 <body>
-	<div class="container">
-		<div class="navbar-header">
-			<a href="#"> <img alt="" src="../Front/img/logo2.png" width='130px;';> </a>
-		</div>
+	<div align="center""> <!-- URL : IP주소 : HTTP포트 / 프로젝트명 /폴더명/파일명 -->
+		<a href="Front/index/main.jsp"> <img alt="" src="/Front/img/logo2.jpg" width='300px;';> </a>
+	</div>
 	
 	<nav>
-		<div>
+		<div class="container">
 			<ul class="nav navbar-nav navbar-right">
 			<%
 				// 세션 가져오기
 				String loginid = (String)session.getAttribute("loginid");
 				if( loginid !=null ){
+					if( loginid.equals("admin") ) {
 			%>
+						<li style="margin 0 1px; font-size: 8px;"> <a href="../admin/admininfo.jsp">관리자</a></li>
+			<%
+					}
+			%>			
 				<li style="margin: 0 1px; font-size: 8px;"><a href="../user/logout.jsp"> 로그아웃 </a></li>
 				<li style="margin: 0 1px; font-size: 8px;"><a href="#"> 회원정보 </a></li>		
 			<%

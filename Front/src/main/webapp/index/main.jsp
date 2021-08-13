@@ -74,8 +74,7 @@
 		<ol class="carousel-indicators">
 			<li data-target="mycarousel" data-slie-to="0" class="active"></li>
 			<li data-target="mycarousel" data-slie-to="1"></li>
-			<li data-target="mycarousel" data-slie-to="2"></li>
-			<li data-target="mycarousel" data-slie-to="3"></li>
+			<li data-target="mycarousel" data-slie-to="2"></li>			
 		</ol>
 		
 				<div class="carousel-inner">
