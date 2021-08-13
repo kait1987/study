@@ -29,7 +29,7 @@
 		}
 		
 		//재고 입력이 없거나 문자가 포함되어 있으면 X
-		if( productform.price.value.length == 0) || isNaN( productform.price.value) ){
+		if( productform.stock.value.length == 0) || isNaN( productform.stock.value) ){
 			alert("가격은 숫자로 입력해주세요");		// isNaN( 숫자 ) : false		숫자가 아니면 true 반환
 			return false;							// isNaN("숫자") : false => 숫자반환 
 		}											// isNaN(숫자+문자) : true
@@ -54,7 +54,7 @@
 			// ^ : 문자 시작 지점
 				// $ : 문자 종료지점
 				// [ ] : 허용범위
-		var regx = /^[a-zA-z0-9]*$/;
+		var regx = /^[a-zA-Z0-9]*$/;
 			// var : js 변수 선언 자료형
 			
 		if ( !regx.test( signupform.id.value) ){

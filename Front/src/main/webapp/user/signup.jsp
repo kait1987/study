@@ -17,7 +17,7 @@
 			</div>
 			<div class="col-lg-4">
 				<div align="center">
-					<img alt="" src="../img/logo.png" width="100px;" style="margin: 30px;">
+					<img alt="" src="../img/logo2.jpg" width="100px;" style="margin: 30px;">
 				</div>
 				<form name="signupform" method="post" action="signupcontroller.jsp" onsubmit="return signupcheck()">
 					<div class="col-lg-8">

@@ -33,7 +33,7 @@
 		UserDao userDao = UserDao.getinstance();
 		int result = userDao.usersignup(userDto);
 		
-		// 5. dao 결과 제정
+		// 5. dao 결과 제어
 		if( result == 1) {
 			PrintWriter printWriter = response.getWriter();
 			printWriter.println("<script>");

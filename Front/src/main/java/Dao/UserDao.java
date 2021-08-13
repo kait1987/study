@@ -22,13 +22,14 @@ public class UserDao {
 			// SQL 드라이버 : SQL 마다 다름
 			Class.forName(" com.mysql.cj.jbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspweb?serverTimezone=UTC", "root" , "1234" );
-		} catch (Exception e) {	}
+		} catch (Exception e) {				
+		}
 		
 	}
 	// 회원 가입 메소드	
 	public int usersignup ( UserDto dto) {
 		
-		String SQL = "insert into user(uid,upassword,uname,uaddress,uemail,upoint) values(?,?,?,?,?,?)";
+		String SQL = "insert into user(uid, upassword, uname, uaddress, uemail, upoint) values(?,?,?,?,?,?)";
 		
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
@@ -44,7 +45,7 @@ public class UserDao {
 			return 1;
 						
 		} catch (Exception e) {	}
-			return 0;
+		return 0;
 	}
 	
 	// 로그인 메소드
