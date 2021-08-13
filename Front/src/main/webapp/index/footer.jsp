@@ -8,10 +8,41 @@
 </head>
 <body>
 
-<!-- 회원가입 유효성 검사 -->
 
 <script type="text/javascript">
+<!-- 제품등록 유효성 검사-->
+	function productcheck() {
+		
+		if( productform.name.value.length < 5) {
+			alert("삼풍명( 최소 5글자 이상 입력해주세요)");
+			return false;			
+		}
+		// 가격 입력이 없거나 뭍자가 포함되어 있으면 X
+		if( productform.price.value.length == 0) || isNaN( productform.price.value) ){
+			alert("가격은 숫자로 입력해주세요");		// isNaN( 숫자 ) : false		숫자가 아니면 true 반환
+			return false;							// isNaN("숫자") : false => 숫자반환 
+		}											// isNaN(숫자+문자) : true
+		// 가격 음수 제한
+		if( productform.price.value <0 ){
+			alret("가격은 양수로만 입력해주세요");
+			return false;
+		}
+		
+		//재고 입력이 없거나 문자가 포함되어 있으면 X
+		if( productform.price.value.length == 0) || isNaN( productform.price.value) ){
+			alert("가격은 숫자로 입력해주세요");		// isNaN( 숫자 ) : false		숫자가 아니면 true 반환
+			return false;							// isNaN("숫자") : false => 숫자반환 
+		}											// isNaN(숫자+문자) : true
+		
+		// 재고 음수 제한
+		if( productform.stock.value < 0 ){
+			alret("가격은 양수로만 입력해주세요");
+			return false;
+		}
+	}
 
+	<!-- 회원가입 유효성 검사 -->
+	
 	function signupcheck() {
 		// 메소드 정의
 		if ( !signupform.id.value){ // id의 값이 null 이면
@@ -23,7 +54,7 @@
 			// ^ : 문자 시작 지점
 				// $ : 문자 종료지점
 				// [ ] : 허용범위
-		var regx = /^[a-zA-z0-9]*%/;
+		var regx = /^[a-zA-z0-9]*$/;
 			// var : js 변수 선언 자료형
 			
 		if ( !regx.test( signupform.id.value) ){

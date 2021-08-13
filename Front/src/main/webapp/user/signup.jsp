@@ -37,15 +37,13 @@
 					<div class="col-lg-12">
 						<label>Password Check*</label>
 						<input type="password" class="form-control" maxlength="30" name="passwordcheck">
-					</div>
-				
+					</div>				
 					
 				
 					<div class="col-lg-12">
 						<label>Name*</label>
 						<input type="text" class="form-control" maxlength="30" name="name">
-					</div>
-			
+					</div>			
 				
 				
 					<div class="col-lg-12">
