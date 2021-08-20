@@ -26,6 +26,13 @@
 		String uaddress = address1+"/"+address2+"/"+address3+"/"+address4;
 		String uemail = request.getParameter("email");
 		
+		out.print( uid );
+		out.print( upassword );
+		out.print( uname );
+		out.print( uaddress );
+		out.print( uemail );
+		
+		
 		// 3. 객체 만들기
 		UserDto userDto = new UserDto( uid, upassword, uname, uaddress , uemail, 100 );
 		

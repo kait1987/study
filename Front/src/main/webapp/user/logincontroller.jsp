@@ -35,19 +35,19 @@
 			PrintWriter printWriter = response.getWriter();
 			printWriter.println("<script>");
 			printWriter.println("location.href='../index/main.jsp'");
-			printWriter.println("<script>");
+			printWriter.println("</script>");
 		}else if( result == 2){
 			PrintWriter printWriter = response.getWriter();
 			printWriter.println("<script>");
 			printWriter.println("alert('로그인 실패 [ 아이디 혹은 패스워드가 다릅니다]')");
 			printWriter.println("location.href='login.jsp'");
-			printWriter.println("<script>");
+			printWriter.println("</script>");
 		}else{
 			PrintWriter printWriter = response.getWriter();
 			printWriter.println("<script>");
 			printWriter.println("alert('로그인 실패 [ 오류발생 관리자에게 문의바랍니다]')");
 			printWriter.println("location.href='login.jsp'");
-			printWriter.println("<script>");
+			printWriter.println("</script>");
 		}
 	%>
 
