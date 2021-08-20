@@ -75,6 +75,85 @@
 			return false;
 		}
 	}
+	
+	<!-- 제품상세페이지 제품수량 -->
+	// js 변수선언
+		// var 변수명
+	var amount;		// 제품 수량 변수 
+	var sell_price; // 제품 가격 변수 
+	
+		// js 메소드를 java에서 호출하는 방법 
+			// onload="init()" : 해당 태그가 실행되었을대 메소드 실행 
+			// onclick="add()" : 해당 태크를 클릭했을때 메소드 실행
+	
+	function init() { // 페이지 열렸을때 초기값 메소드 
+	// js 메소드 선언 
+		// function 메소드명( 인수 ){  }
+	
+		// 현재수량
+		amount = document.viewform.amount.value;
+		// 현재 제품 금액
+		sell_price = document.viewform.sell_price.value;
+		// 현재 제품 재고
+		max = document.viewform.max.value;
+		// 총금액
+		document.viewform.sum.value = sell_price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+				// js 정규표현식 
+					// replace( 정규표현식[패턴] , "해당패턴의 교체할문자")
+						// 3번째 자릿수 마다 , 문자열 교체 
+						// /:시작과 끝 
+						// /g : 패턴의 검색 방법  [ g = Global ]
+							// \B : 문자 시작점 찾기
+							// \B( 앞 = 문자존재),(뒤=문자열3글자)
+								// (?<!\.\d*) 
+									// \d : [ 0~9 ] : 숫자 문자 
+									// \d{3} : 숫자 3개 
+							
+								// ( ?=(\d{3})+(?!\d) )
+								 	// 앞 + 뒤 조건 모두 충족 (?=(\d{3}) + ?!\d) )
+								 	
+	}
+	
+	function add() { // +버튼 눌렀을때 메소드 실행 
+		hm = document.viewform.amount;
+		sum  =  document.viewform.sum;
+		
+		if( hm.value > parseInt(max) ){
+			//현재수량이 재고수보다 커지면 중지 
+						// 문자열 => 정수형 
+						// java : Integer.parseInt(  문자열  );
+						// js : parseInt(문자열);
+			
+			alert("[알림] 재고가 부족합니다 ");
+			return;
+			
+		}
+		
+		hm.value++; // 현재 수량 증가
+		sum.value =  (hm.value * sell_price).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","); ;
+	}
+	
+	function del() { // -버튼 눌렀을때 메소드 실행 
+		hm = document.viewform.amount;
+		sum  =  document.viewform.sum;
+		// 제품수량 0보다 크게 설정 
+		if( hm.value > 1 ){
+			hm.value--; //수량감소
+			sum.value =  (hm.value * sell_price).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","); ;
+		}
+		// 1보다 작은경우 어떠한 코드실행X
+	}
+	
+	function addtocart() {
+		
+		// confirm() : 확인[true] / 취소[false]  메시지 
+		if( confirm("상품을 장바구니에 추가하시겠습니까? ") ){
+			viewform.submit();
+		}
+		
+	}
+	
+	
 </script>
 
 
@@ -136,6 +215,46 @@
             }
         }).open();
     }
+</script>
+<!-- ----------------------아임포트 스크립트-------------------- -->
+<script>
+
+	// HTML 해당 ID 호출
+	// $(#id)
+		// $("check_module").click(함수){}
+	$("#check_module").click( function() {
+	
+    var IMP = window.IMP; // 생략 가능
+    IMP.init("{가맹점 식별코드}"); // 예: imp00000000
+    
+    // IMP.request_pay( { } )
+    IMP.request_pay({
+    	
+    	pg : 'danal', // pg사 이름
+    	pay_method : "card" , // 결제 방식
+    	
+    	name : "jspDJ" , // 홈페이지 회사명
+    	amount : parsInt(document.payform.orderpay.value) , //결제액
+    	
+    	merchant_uid : "merchant_"+new Date().getTime(),
+    	
+    	
+    },function( rsp){
+    	console.log(rsp);
+    	
+    	if ( rsp.success ){ // 결제를 성공했을때
+    		var msg = "결제가 완료되었습니다." // 변수
+    		
+    	}else{ // 결제를 실패했을때 
+    		var msg = "결제가 실패했습니다";
+    		msg += "오류 : " + rsp.error_msg;
+    	}
+    	alert(msg);
+   	 });
+    
+    
+    });
+
 </script>
 </body>
 </html>

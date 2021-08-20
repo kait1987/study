@@ -1,3 +1,7 @@
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="Dto.ProductDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Dao.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -110,15 +114,35 @@
 				</div>
 				
 				<ul>
-					<!-- 반복문 -->
-					<li class="main_li">
-						<a href="#"> <img alt="" src="../img/XDJ-RX2.jpg"> </a>
-						<div class="goods_info">
-							<span class="category">분류명</span>
-							<span class="procutname">제품명</span>
-							<span class="price">2,450,000</span>
-						</div>
-					</li>	
+				
+					<%
+					ProductDao productDao = ProductDao.getinstance();
+					ArrayList<ProductDto> productDtos = productDao.productlist();
+					
+					// 표시형식 클래스 => 천단위 구분 기호  
+					DecimalFormat decimalFormat = new DecimalFormat("###,### 원");
+					
+					
+					for( ProductDto productDto : productDtos ){
+					
+					%>
+					
+						<!-- 반복문 -->
+						<li class="main_li">
+							<a href="../product/productview.jsp?pcode=<%=productDto.getProduct_code() %>"> 
+								<img alt="" src="../upload/<%=productDto.getProduct_img()%>"> 
+							</a> 
+							<div class="goods_info">
+								<span class="category"><%=productDto.getProduct_category()%></span>
+								<span class="productname"><%=productDto.getProduct_name()%></span>
+								<span class="price">
+									<%= decimalFormat.format( productDto.getProduct_price() ) %>
+								</span>
+								
+							</div>
+						</li>
+					<% } %>
+					
 				</ul>
 			</div>
 		</div>
