@@ -91,7 +91,37 @@ public class ProductDao {
 		} catch (Exception e) { }
 		return null;
 	}
+	
 	// 3. 제품 개별 조회
+	public ProductDto getProduct( int pcode) {
+		
+		String sql = "select * form product where product_code = ?";
+try {
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, pcode);
+			resultSet =  preparedStatement.executeQuery();
+			
+			if( resultSet.next()  ) {
+				ProductDto productDto = new ProductDto( 
+						resultSet.getInt(1) ,
+						resultSet.getString(2) ,
+						resultSet.getString(3) ,
+						resultSet.getInt(4) ,
+						resultSet.getString(5) ,
+						resultSet.getString(6) ,
+						resultSet.getInt(7) ,
+						resultSet.getString(8) ,
+						resultSet.getString(9) ,
+						resultSet.getInt(10) ,
+						resultSet.getInt(11) ,
+						resultSet.getInt(12) );
+				return productDto;
+			}
+			return null;
+		}catch (Exception e) {}
+		return null;
+	}
 	
 	// 4. 제품 수정
 	

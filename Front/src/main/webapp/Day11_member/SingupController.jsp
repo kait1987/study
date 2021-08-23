@@ -2,7 +2,7 @@
 <%@page import="java.util.Enumeration"%>
 <%@page import="java.util.HashSet"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+
 	<!-- Controller 페이지 [ view 없음 ] -->
 	<% // java 스크립트 시작
 	
@@ -60,8 +60,8 @@
 
 	// java 스크립트 끝	
 	%>
-	
-	
-	
+
+
+
 </body>
 </html>

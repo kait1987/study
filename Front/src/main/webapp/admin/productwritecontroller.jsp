@@ -4,7 +4,7 @@
 <%@page import="Dao.ProductDao"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +50,7 @@
 			printWriter.println("alert('제품 등록 실패[관리자에게 문의] ')");
 			printWriter.println("history.back()"); // 전페이지로 이동
 			printWriter.println("</script>");
-		}
+		} // 감사합니다!!!!
 	%>
 </body>
 </html>

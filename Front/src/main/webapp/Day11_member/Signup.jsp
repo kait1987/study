@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,37 +7,36 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3> 회원가입 페이지</h3>
-		<form method="post" action="SignupController.jsp">
-			아이디 : <input type="text" name="id"> <br>
-			비밀번호 : <input type="password" name="password"> <br>
-			비밀번호 확인 : <input type="password" name="passwordconfirm"> <br>
-			이름 : <input type="text" name="name"> <br>
-			이메일 : <input type="email" name="email"> <br>
-			주소 : <input type="text" id="sample4_postcode" placeholder="우편번호" name="address1">
-					<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-					<input type="text" id="sample4_roadAddress" placeholder="도로명주소" name="address2">
-					<input type="text" id="sample4_jibunAddress" placeholder="지번주소" name="address3">
-					<span id="guide" style="color:#999;display:none"></span>
-					<input type="text" id="sample4_detailAddress" placeholder="상세주소" name="address4">
-					<input type="text" id="sample4_extraAddress" placeholder="참고항목" name="address5"> <br>
-			연락처 : <select name="Phone1">
-					<option> 010 </option>
-					<option> 011 </option>
-					<option> 013 </option>
-					</select>		
-					<input type="text" name="Phone2">
-					<input type="text" name="Phone3">
-					
-				<input type="submit" value="회원가입하기"> <br>
-			
-		</form>
+	<h3>회원가입 페이지</h3>
+	<form method="post" action="SignupController.jsp">
+		아이디 : <input type="text" name="id"> <br> 비밀번호 : <input
+			type="password" name="password"> <br> 비밀번호 확인 : <input
+			type="password" name="passwordconfirm"> <br> 이름 : <input
+			type="text" name="name"> <br> 이메일 : <input type="email"
+			name="email"> <br> 주소 : <input type="text"
+			id="sample4_postcode" placeholder="우편번호" name="address1"> <input
+			type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+		<input type="text" id="sample4_roadAddress" placeholder="도로명주소"
+			name="address2"> <input type="text" id="sample4_jibunAddress"
+			placeholder="지번주소" name="address3"> <span id="guide"
+			style="color: #999; display: none"></span> <input type="text"
+			id="sample4_detailAddress" placeholder="상세주소" name="address4">
+		<input type="text" id="sample4_extraAddress" placeholder="참고항목"
+			name="address5"> <br> 연락처 : <select name="Phone1">
+			<option>010</option>
+			<option>011</option>
+			<option>013</option>
+		</select> <input type="text" name="Phone2"> <input type="text"
+			name="Phone3"> <input type="submit" value="회원가입하기"> <br>
+
+	</form>
 
 
 
-<!-- 다음 api 스크립트 -->		
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
+	<!-- 다음 api 스크립트 -->
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {
         new daum.Postcode({

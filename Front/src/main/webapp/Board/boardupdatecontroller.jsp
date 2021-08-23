@@ -5,7 +5,7 @@
 <%@page import="Dto.NoticeDto"%>
 <%@page import="Dao.NoticeDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>

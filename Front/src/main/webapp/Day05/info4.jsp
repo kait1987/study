@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +8,9 @@
 </head>
 <body>
 
-	<%@include file="menu.jsp" %>
-	<%@include file="companyinfo.jsp" %>
-	
+	<%@include file="menu.jsp"%>
+	<%@include file="companyinfo.jsp"%>
+
 	�λ縻
 
 </body>

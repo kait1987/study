@@ -3,7 +3,7 @@
 <%@page import="Dto.Board"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +26,7 @@
 		Board board = new Board( btitle, bcontents ); // 조회수는 0
 	
 	%>
-	
+
 	<!-- 3.DB에 저장하기  -->
 	<%
 		BoardDao boardDao = BoardDao.getinstance();

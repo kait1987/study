@@ -1,6 +1,6 @@
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +35,10 @@
 							
 	// 스트립트문 끝 
 	%>
-	
+
 	<% if( !password.equals(passwordconfirm) ){
-	%>	
-		<script type="text/javascript">
+	%>
+	<script type="text/javascript">
 			alert('패스워드가 서로 다릅니다');
 			location.href="Day10_5_signup.jsp";
 		</script>
@@ -51,7 +51,7 @@
 		printWriter.println("</script>");
 	}
 	%>
-	
+
 
 
 </body>

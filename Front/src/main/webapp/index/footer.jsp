@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 <body>
 
 
-<script type="text/javascript">
+	<script type="text/javascript">
 <!-- 제품등록 유효성 검사-->
 	function productcheck() {
 		
@@ -157,9 +157,10 @@
 </script>
 
 
-<!-- 다음 주소 API js -->
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
+	<!-- 다음 주소 API js -->
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {
         new daum.Postcode({
@@ -216,8 +217,8 @@
         }).open();
     }
 </script>
-<!-- ----------------------아임포트 스크립트-------------------- -->
-<script>
+	<!-- ----------------------아임포트 스크립트-------------------- -->
+	<script>
 
 	// HTML 해당 ID 호출
 	// $(#id)

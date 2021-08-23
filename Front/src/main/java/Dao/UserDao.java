@@ -19,10 +19,12 @@ public class UserDao {
 
 	public UserDao() {
 		try {
-			// SQL 드라이버 : SQL 마다 다름
-			Class.forName(" com.mysql.cj.jbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspweb?serverTimezone=UTC", "root" , "1234" );
-		} catch (Exception e) {				
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspweb?serverTimezone=UTC", "root", "1234");
+			System.out.println("asdasd");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 		
 	}

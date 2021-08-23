@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,40 +12,43 @@
 		// 유효성 검사 : js
 	%>
 
-	<%@include file="../index/menu.jsp" %>
-				<!-- container width : 1200px -->
+	<%@include file="../index/menu.jsp"%>
+	<!-- container width : 1200px -->
 	<div class="container">
-		
+
 		<h3>글 작성</h3>
-		<form name="boardform" method="post" action="boardwritecontroller.jsp" enctype="multipart/form-data" onsubmit="return boardcheck()">
+		<form name="boardform" method="post" action="boardwritecontroller.jsp"
+			enctype="multipart/form-data" onsubmit="return boardcheck()">
 			<div style="margin-top: 30px;">
-				<label>제목</label>
-				<input type="text" class="form-control" name="title" maxlength="30">
+				<label>제목</label> <input type="text" class="form-control"
+					name="title" maxlength="30">
 			</div>
-			
+
 			<div tyle="margin-top: 30px;">
 				<label>내용</label>
-				<textarea rows="5" cols="" style="resize: none;" class="form-control" name="contents"></textarea>
+				<textarea rows="5" cols="" style="resize: none;"
+					class="form-control" name="contents"></textarea>
 			</div>
-			
+
 			<div tyle="margin-top: 30px;">
-				<label>첨부파일</label>
-				<input type="file" class="form-control" name="file" >
+				<label>첨부파일</label> <input type="file" class="form-control"
+					name="file">
 			</div>
-			
+
 			<div>
-				<input type="submit" value="등록" class="form-control pull-right" style="width: 100px;">
+				<input type="submit" value="등록" class="form-control pull-right"
+					style="width: 100px;">
 			</div>
-		</form>		
+		</form>
 	</div>
-	
-		<!--  
+
+	<!--  
 			HTML : 웹문서
 			CSS : HTML 꾸미기 [스타일 시트]
 			JS :
 		
 		 -->
-	
+
 	<script type="text/javascript"> <!-- js[javascript] 유효성 검사 -->
 		function boardcheck() {
 			// boardcheck 메소드 정의
@@ -61,6 +64,6 @@
 		}
 	
 	</script>
-	
+
 </body>
 </html>

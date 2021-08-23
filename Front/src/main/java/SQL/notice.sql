@@ -43,3 +43,30 @@ product_code int primary key auto_increment ,
     product_salesrate int , 
     product_amount int
 )
+
+CREATE TABLE sjpweb.orders (
+  orders_no int NOT NULL AUTO_INCREMENT not null,
+  orders_uno int NOT NULL,
+  orders_name varchar(100) NOT NULL,
+  orders_address varchar(1000) NOT NULL,
+  orders_phone varchar(100) NOT NULL,
+  orders_comment varchar(1000) NOT NULL,
+  orders_fee int NOT NULL,
+  orders_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP not null,
+  orders_state int NOT NULL,
+  
+  FOREIGN KEY (orders_uno) REFERENCES user (uno)
+) 
+
+create table jspweb.orders_detail(
+
+	orders_detail_no int primary key auto_increment not null ,
+    orders_no int not null,
+    orders_product_code int not null,
+    orders_amount int not null,
+    orders_detail_state int not null,
+    
+    foreign key(orders_no) references orders(orders_no) ,
+    foreign key(orders_product_code) references product (product_code )
+    
+)

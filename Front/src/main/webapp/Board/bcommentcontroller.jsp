@@ -1,7 +1,7 @@
 <%@page import="Dao.BcommentDao"%>
 <%@page import="Dto.BcommentDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	
+
 	<%
 	
 		String loginid =  (String)session.getAttribute("loginid");

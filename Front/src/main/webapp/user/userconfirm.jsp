@@ -1,7 +1,7 @@
 <%@page import="Dto.UserDto"%>
 <%@page import="Dao.UserDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +10,8 @@
 </head>
 <body>
 
-	<%@include file="../index/menu.jsp" %>
-	
+	<%@include file="../index/menu.jsp"%>
+
 	<%
 	
 		UserDao userDao = UserDao.getinstance();
