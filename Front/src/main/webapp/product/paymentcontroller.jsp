@@ -1,3 +1,7 @@
+<%@page import="Dto.Orders_detail"%>
+<%@page import="Dto.ProductDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Dao.OrderDao"%>
 <%@page import="Dao.UserDao"%>
 <%@page import="Dto.UserDto"%>
 <%@page import="Dto.Orders"%>
@@ -45,13 +49,48 @@
 		Orders orders = new Orders( userDto.getUno() , rname , raddress , rphone , rcomment , 1 , orders_fee );
 									// 1. 회원번호 ,  2. 이름  , 주소        연락처   ,  요청사항 ,  상태 , 총결제액 
 			// 2. dao
+		OrderDao orderDao = OrderDao.getinstance();
+		boolean result = orderDao.orderswrite(orders);
 		
+		if( result){
 			
-		// 2. 주문 상세 등록 
-			// 1. dto 
-			// 2. dao
+		// 2. 주문 상세 등록 [제품코드별 등록]
+			ArrayList<ProductDto> productDtos = (ArrayList<ProductDto>)session.getAttribute("cartlist");
+			
+			for( ProductDto productDto : productDtos ){
+				
+				int orders_no = orderDao.getorders_no();
+				
+				// 1. dto 
+				Orders_detail orders_detail = new Orders_detail( orders_no, productDto.getProduct_code() , productDto.getProduct_amount() , 1);
+			
+				// 2. dao
+				
+				boolean result2 = orderDao.orders_datailwrite(orders_detail);
+				
+				if( !result2){
+					break;
+				}
+			
+			
+			}
+			
+			
+			
+		// 3. 
+			// 1. 장바구니 세션 초기화 
+			session.setAttribute("cartlist", null);
+			// 2. 결제 완료 페이지로 이동
+			response.sendRedirect("../index/main.jsp"); // 임시
+			
+			
+		}else{
+			
+		}
+			
 		
-		// 3. 결제 완료 페이지로 이동 
+		
+		
 	
 	%>
 
