@@ -127,4 +127,21 @@ try {
 	
 	// 5. 제품 삭제
 	
+	// 6. 주문시 재고 차감 메소드
+	public boolean stockupdate( ProductDto productDto) {
+		
+		String SQL = "update product set product_stock = product_stock-? where product_code = ? ";
+		
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setInt(1, productDto.getProduct_amount() );
+			preparedStatement.setInt(2, productDto.getProduct_code() );
+			
+			preparedStatement.executeUpdate();
+			return true;
+			
+		} catch (Exception e) { } 
+		return false;
+	}
+	
 }

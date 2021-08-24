@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import Dto.Orders;
 import Dto.Orders_detail;
+import Dto.ProductDto;
 
 public class OrderDao {
 	
@@ -87,5 +89,41 @@ public class OrderDao {
 		}
 		
 		return -1;
+	}
+	
+	// 4. 주문정보 호출
+	public Orders getorders() {
+		// SQL
+		
+		try {
+			String SQL = "select * from orders where orders_no = ? ";
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setInt(1, getorders_no());
+			
+			if (resultSet.next() ) {
+				Orders orders = new Orders( resultSet.getInt(1) , 
+						resultSet.getInt(2), resultSet.getString(3) ,
+						resultSet.getString(4), resultSet.getString(5) ,
+						resultSet.getString(6), resultSet.getInt(7) ,
+						resultSet.getString(8), resultSet.getInt(9))
+						
+						return orders;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	
+	
+	}
+	
+	// 5. 주문번호에 해당하는 주문디테일
+	public ArrayList<ProductDto> getordersdetail( int orders_no){
+		
+		// SQL
+		
+		ArrayList<ProductDto> productDtos = new ArrayList<ProductDto>();
+		
+		return productDtos;
 	}
 }

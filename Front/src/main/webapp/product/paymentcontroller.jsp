@@ -1,3 +1,4 @@
+<%@page import="Dao.ProductDao"%>
 <%@page import="Dto.Orders_detail"%>
 <%@page import="Dto.ProductDto"%>
 <%@page import="java.util.ArrayList"%>
@@ -16,7 +17,7 @@
 <body>
 
 	<%
-		
+		request.setCharacterEncoding("UTF-8");
 		// 0. 필요한 매개변수 요청 
 		String loginid = (String)session.getAttribute("loginid");
 		UserDao userDao = UserDao.getinstance();
@@ -42,11 +43,11 @@
 		String rcomment = request.getParameter("rcomment");
 		
 		// 주문 가격 
-		int orders_fee = Integer.parseInt( request.getParameter("orderfee") );
+		int orders_fee = Integer.parseInt( request.getParameter("orderpay") );
 		
 		// 1. 주문 등록 
 			// 1. dto
-		Orders orders = new Orders( userDto.getUno() , rname , raddress , rphone , rcomment , 1 , orders_fee );
+		Orders orders = new Orders( userDto.getUno() , rname , raddress , rphone , rcomment , orders_fee , 1 );
 									// 1. 회원번호 ,  2. 이름  , 주소        연락처   ,  요청사항 ,  상태 , 총결제액 
 			// 2. dao
 		OrderDao orderDao = OrderDao.getinstance();
@@ -57,16 +58,18 @@
 		// 2. 주문 상세 등록 [제품코드별 등록]
 			ArrayList<ProductDto> productDtos = (ArrayList<ProductDto>)session.getAttribute("cartlist");
 			
+			int orders_no = orderDao.getorders_no();
+			
 			for( ProductDto productDto : productDtos ){
-				
-				int orders_no = orderDao.getorders_no();
-				
+								
 				// 1. dto 
 				Orders_detail orders_detail = new Orders_detail( orders_no, productDto.getProduct_code() , productDto.getProduct_amount() , 1);
 			
-				// 2. dao
-				
+				// 2. dao				
 				boolean result2 = orderDao.orders_datailwrite(orders_detail);
+				
+				// 2. 주문 받은 수량만큼 재고 차감
+				productDao.stockupdate(productDto);
 				
 				if( !result2){
 					break;
@@ -81,7 +84,7 @@
 			// 1. 장바구니 세션 초기화 
 			session.setAttribute("cartlist", null);
 			// 2. 결제 완료 페이지로 이동
-			response.sendRedirect("../index/main.jsp"); // 임시
+			response.sendRedirect("paymentcompletion.jsp?orders_no"+orders_no); // 임시
 			
 			
 		}else{
