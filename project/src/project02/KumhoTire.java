@@ -1,11 +1,11 @@
 package project02;
 
-public class HankookTire extends Tire{
+public class KumhoTire extends Tire{
 	
 	// 필드
 	// 생성자
 	
-	public HankookTire(String location, int maxRotation) {
+	public KumhoTire(String location, int maxRotation) {
 		super(location, maxRotation);
 	}
 	
@@ -15,10 +15,10 @@ public class HankookTire extends Tire{
 		// TODO Auto-generated method stub
 		++accumulateRotation;
 		if(accumulateRotation<maxRotation) {
-			System.out.println(location+ "KumhoTire 수명 : " + (maxRotation-accumulateRotation) + "회" );
+			System.out.println(location+ "HankookTire 수명 : " + (maxRotation-accumulateRotation) + "회" );
 			return true;
 		}else {
-			System.out.println("***" + location + "KumhoTire 펑크 ***");
+			System.out.println("***" + location + "HankookTire 펑크 ***");
 			return false;
 		}
 				
