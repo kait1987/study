@@ -16,7 +16,7 @@ public class Audio implements RemoteControl{
 	}
 	
 	// setVolume() 추상 메소드의 실제 메소드
-	private void setVolume(int volume) {
+	public void setVolume(int volume) {
 		if(volume>RemoteControl.MAX_VOLLUME) {
 			this.volume = RemoteControl.MAX_VOLLUME;
 		}else if(volume<RemoteControl.MIN_VOLLUME) {
