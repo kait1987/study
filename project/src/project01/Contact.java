@@ -7,21 +7,21 @@ public class Contact {
 	 */
 	
 	private String name;
-	private String phoenumber;
+	private String phoeNumber;
 	private String email;
 	private String address;
 	private String birthday;
 	private String group;
+	 
 	
 	// 생성자
 	public Contact(String name, String phoneNumber , String email, String address, String birthday, String group) {
-		
 	}
 	
 	// 연락처 출력 메소드
 	private void printinfo() {
 		System.out.println("이름 : "+ this.name);
-		System.out.println("전화번호 : "+ this.phoenumber);
+		System.out.println("전화번호 : "+ this.phoeNumber);
 		System.out.println("이메일 : "+ this.email);
 		System.out.println("주소 : "+ this.address);
 		System.out.println("생일 : "+ this.birthday);
@@ -38,12 +38,12 @@ public class Contact {
 		this.name = name;
 	}
 	
-	public String getPhoenumber() {
-		return phoenumber;
+	public String getPhoeNumber() {
+		return phoeNumber;
 	}
 
-	public void setPhoenumber(String phoenumber) {
-		this.phoenumber = phoenumber;
+	public void setPhoeNumber(String phoenumber) {
+		this.phoeNumber = phoenumber;
 	}
 
 	public String getEmail() {

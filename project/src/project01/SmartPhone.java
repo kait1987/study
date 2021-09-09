@@ -26,7 +26,7 @@ public class SmartPhone {
 		String birthday = in.nextLine();
 		System.out.print("그룹 :");
 		String group = in.nextLine();
-		
+				
 		return new Contact(name, phoneNumber, email, address, birthday, group);
 		}
 	
@@ -41,7 +41,7 @@ public class SmartPhone {
 	public void printContact(Contact contact) {
 		System.out.println("----------------------------------------------");
 		System.out.println("이름 : " + contact.getName() );
-		System.out.println("전화번호 : " + contact.getPhoenumber() );
+		System.out.println("전화번호 : " + contact.getPhoeNumber() );
 		System.out.println("이메일 : " + contact.getEmail() );
 		System.out.println("주소 : " + contact.getAddress() );
 		System.out.println("생일 : " + contact.getBirthday() );
