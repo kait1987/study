@@ -1,11 +1,22 @@
 package Project05;
 
+
 public class Person {
+
+	private Phone[] phones;
+	private Phone homePhone;
+	private Phone officePhone;
 	
-	// 다음 클래스를 다이어 그램을 코드로 작성
-	
-	// person --------> -phones(변수), 2(변수) / phone (연과관계)
-	public static void main(String[] args) {
+	public Person() {
+		phones = new Phone[2];
+		}
+	public Phone getPhone(int i) {
+		if (i == 0 || i == 1)
+			return phones[i]
+			
+			return null;
 		
 	}
+	
+	
 }

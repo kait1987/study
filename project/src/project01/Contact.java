@@ -16,6 +16,12 @@ public class Contact {
 	
 	// 생성자
 	public Contact(String name, String phoneNumber , String email, String address, String birthday, String group) {
+		this.name = name;
+		this.phoeNumber = phoeNumber;
+		this.email = email;
+		this.address = address;
+		this.birthday = birthday;
+		this.group = group;
 	}
 	
 	// 연락처 출력 메소드
