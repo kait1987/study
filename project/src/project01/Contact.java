@@ -15,7 +15,8 @@ public class Contact {
 	 
 	
 	// 생성자
-	public Contact(String name, String phoneNumber , String email, String address, String birthday, String group) {
+	public Contact(String name, String phoeNumber, String email, String address, String birthday, String group) {
+		super();
 		this.name = name;
 		this.phoeNumber = phoeNumber;
 		this.email = email;
@@ -37,6 +38,9 @@ public class Contact {
 	}
 	
 	
+	
+
+
 	public String getName() {
 		return name;
 	}
